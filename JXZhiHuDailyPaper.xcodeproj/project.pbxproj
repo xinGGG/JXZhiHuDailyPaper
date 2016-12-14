@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		21CEC0A81E0177DE0032B7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CEC0A71E0177DE0032B7AF /* main.m */; };
 		21CEC0AB1E0177DE0032B7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CEC0AA1E0177DE0032B7AF /* AppDelegate.m */; };
-		21CEC0AE1E0177DE0032B7AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CEC0AD1E0177DE0032B7AF /* ViewController.m */; };
 		21CEC0B11E0177DE0032B7AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CEC0AF1E0177DE0032B7AF /* Main.storyboard */; };
 		21CEC0B31E0177DE0032B7AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21CEC0B21E0177DE0032B7AF /* Assets.xcassets */; };
 		21CEC0B61E0177DE0032B7AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CEC0B41E0177DE0032B7AF /* LaunchScreen.storyboard */; };
 		21CEC0C11E0177DF0032B7AF /* JXZhiHuDailyPaperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CEC0C01E0177DF0032B7AF /* JXZhiHuDailyPaperTests.m */; };
+		21E523251E018AF200B67CCF /* FMDatabaseQueue+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523241E018AF200B67CCF /* FMDatabaseQueue+Extension.m */; };
+		3C0F290019450237B86BB74C /* libPods-JXZhiHuDailyPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +32,6 @@
 		21CEC0A71E0177DE0032B7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21CEC0A91E0177DE0032B7AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21CEC0AA1E0177DE0032B7AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		21CEC0AC1E0177DE0032B7AF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		21CEC0AD1E0177DE0032B7AF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		21CEC0B01E0177DE0032B7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21CEC0B21E0177DE0032B7AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21CEC0B51E0177DE0032B7AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +39,14 @@
 		21CEC0BC1E0177DF0032B7AF /* JXZhiHuDailyPaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXZhiHuDailyPaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CEC0C01E0177DF0032B7AF /* JXZhiHuDailyPaperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXZhiHuDailyPaperTests.m; sourceTree = "<group>"; };
 		21CEC0C21E0177DF0032B7AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21CEC0D01E017ED40032B7AF /* JXZhiHuDailyPaper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JXZhiHuDailyPaper-Prefix.pch"; sourceTree = "<group>"; };
+		21E5231F1E01897100B67CCF /* JXConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXConfig.h; sourceTree = "<group>"; };
+		21E523201E01897100B67CCF /* JXConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXConstant.h; sourceTree = "<group>"; };
+		21E523231E018AF200B67CCF /* FMDatabaseQueue+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabaseQueue+Extension.h"; sourceTree = "<group>"; };
+		21E523241E018AF200B67CCF /* FMDatabaseQueue+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabaseQueue+Extension.m"; sourceTree = "<group>"; };
+		40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXZhiHuDailyPaper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67E17D84807227AED4359A3 /* Pods-JXZhiHuDailyPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXZhiHuDailyPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXZhiHuDailyPaper/Pods-JXZhiHuDailyPaper.release.xcconfig"; sourceTree = "<group>"; };
+		E9CC5AF12DC0FF188A06117A /* Pods-JXZhiHuDailyPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXZhiHuDailyPaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXZhiHuDailyPaper/Pods-JXZhiHuDailyPaper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C0F290019450237B86BB74C /* libPods-JXZhiHuDailyPaper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		071C2E94F9098A76C7C49EC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9CC5AF12DC0FF188A06117A /* Pods-JXZhiHuDailyPaper.debug.xcconfig */,
+				A67E17D84807227AED4359A3 /* Pods-JXZhiHuDailyPaper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		21CEC09A1E0177DE0032B7AF = {
 			isa = PBXGroup;
 			children = (
 				21CEC0A51E0177DE0032B7AF /* JXZhiHuDailyPaper */,
 				21CEC0BF1E0177DF0032B7AF /* JXZhiHuDailyPaperTests */,
 				21CEC0A41E0177DE0032B7AF /* Products */,
+				071C2E94F9098A76C7C49EC0 /* Pods */,
+				24BC64D31CD274BDC051CE30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,12 +102,10 @@
 			children = (
 				21CEC0A91E0177DE0032B7AF /* AppDelegate.h */,
 				21CEC0AA1E0177DE0032B7AF /* AppDelegate.m */,
-				21CEC0AC1E0177DE0032B7AF /* ViewController.h */,
-				21CEC0AD1E0177DE0032B7AF /* ViewController.m */,
-				21CEC0AF1E0177DE0032B7AF /* Main.storyboard */,
-				21CEC0B21E0177DE0032B7AF /* Assets.xcassets */,
-				21CEC0B41E0177DE0032B7AF /* LaunchScreen.storyboard */,
-				21CEC0B71E0177DE0032B7AF /* Info.plist */,
+				21E5231D1E01897100B67CCF /* Model */,
+				21E5231E1E01897100B67CCF /* Util */,
+				21E523211E01897100B67CCF /* View */,
+				21E523221E01897100B67CCF /* ViewModel */,
 				21CEC0A61E0177DE0032B7AF /* Supporting Files */,
 			);
 			path = JXZhiHuDailyPaper;
@@ -97,6 +114,11 @@
 		21CEC0A61E0177DE0032B7AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				21CEC0AF1E0177DE0032B7AF /* Main.storyboard */,
+				21CEC0B21E0177DE0032B7AF /* Assets.xcassets */,
+				21CEC0B41E0177DE0032B7AF /* LaunchScreen.storyboard */,
+				21CEC0B71E0177DE0032B7AF /* Info.plist */,
+				21CEC0D01E017ED40032B7AF /* JXZhiHuDailyPaper-Prefix.pch */,
 				21CEC0A71E0177DE0032B7AF /* main.m */,
 			);
 			name = "Supporting Files";
@@ -111,6 +133,46 @@
 			path = JXZhiHuDailyPaperTests;
 			sourceTree = "<group>";
 		};
+		21E5231D1E01897100B67CCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21E5231E1E01897100B67CCF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				21E5231F1E01897100B67CCF /* JXConfig.h */,
+				21E523201E01897100B67CCF /* JXConstant.h */,
+				21E523231E018AF200B67CCF /* FMDatabaseQueue+Extension.h */,
+				21E523241E018AF200B67CCF /* FMDatabaseQueue+Extension.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		21E523211E01897100B67CCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21E523221E01897100B67CCF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		24BC64D31CD274BDC051CE30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21CEC0C51E0177DF0032B7AF /* Build configuration list for PBXNativeTarget "JXZhiHuDailyPaper" */;
 			buildPhases = (
+				FE4C95A996D707A306CBB086 /* [CP] Check Pods Manifest.lock */,
 				21CEC09F1E0177DE0032B7AF /* Sources */,
 				21CEC0A01E0177DE0032B7AF /* Frameworks */,
 				21CEC0A11E0177DE0032B7AF /* Resources */,
+				74C94DFE360696B8B939D1DF /* [CP] Embed Pods Frameworks */,
+				6F2C2A4280E80A38DD437450 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,6 +220,7 @@
 		21CEC09B1E0177DE0032B7AF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JX;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = ljx;
 				TargetAttributes = {
@@ -210,13 +276,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F2C2A4280E80A38DD437450 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXZhiHuDailyPaper/Pods-JXZhiHuDailyPaper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74C94DFE360696B8B939D1DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXZhiHuDailyPaper/Pods-JXZhiHuDailyPaper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE4C95A996D707A306CBB086 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		21CEC09F1E0177DE0032B7AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21CEC0AE1E0177DE0032B7AF /* ViewController.m in Sources */,
 				21CEC0AB1E0177DE0032B7AF /* AppDelegate.m in Sources */,
+				21E523251E018AF200B67CCF /* FMDatabaseQueue+Extension.m in Sources */,
 				21CEC0A81E0177DE0032B7AF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,9 +463,11 @@
 		};
 		21CEC0C61E0177DF0032B7AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9CC5AF12DC0FF188A06117A /* Pods-JXZhiHuDailyPaper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2W58ELT7LX;
+				GCC_PREFIX_HEADER = "JXZhiHuDailyPaper/JXZhiHuDailyPaper-Prefix.pch";
 				INFOPLIST_FILE = JXZhiHuDailyPaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-swift.JXZhiHuDailyPaper";
@@ -361,9 +477,11 @@
 		};
 		21CEC0C71E0177DF0032B7AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A67E17D84807227AED4359A3 /* Pods-JXZhiHuDailyPaper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2W58ELT7LX;
+				GCC_PREFIX_HEADER = "JXZhiHuDailyPaper/JXZhiHuDailyPaper-Prefix.pch";
 				INFOPLIST_FILE = JXZhiHuDailyPaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple-swift.JXZhiHuDailyPaper";
@@ -416,6 +534,7 @@
 				21CEC0C71E0177DF0032B7AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21CEC0C81E0177DF0032B7AF /* Build configuration list for PBXNativeTarget "JXZhiHuDailyPaperTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +543,7 @@
 				21CEC0CA1E0177DF0032B7AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

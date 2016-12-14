@@ -1,0 +1,24 @@
+//
+//  JXZhiHuDailyPaper-Prefix.pch
+//  JXZhiHuDailyPaper
+//
+//  Created by xing on 16/12/14.
+//  Copyright © 2016年 ljx. All rights reserved.
+//
+
+#ifndef JXZhiHuDailyPaper_Prefix_pch
+#define JXZhiHuDailyPaper_Prefix_pch
+#ifdef __OBJC__
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "JXConstant.h"
+#import "JXConfig.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <AFNetworking/AFNetworking.h>
+#import "MBProgressHUD.h"
+#import "IQKeyboardManager.h"
+#import "PureLayout.h"
+#import "MBProgressHUD.h"
+#import "FMDB.h"
+#endif
+#endif /* JXZhiHuDailyPaper_Prefix_pch */

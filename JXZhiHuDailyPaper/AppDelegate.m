@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FMDatabaseQueue+Extension.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self configureFMDB];
+    [self configureKeyboardManager];
     return YES;
+}
+
+- (void)configureFMDB{
+    [[FMDatabaseQueue shareInstense] inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:createNewsSQL];
+    }];
+}
+- (void)configureKeyboardManager {
+    IQKeyboardManager.sharedManager.enableAutoToolbar = NO;
+    IQKeyboardManager.sharedManager.shouldResignOnTouchOutside = YES;
 }
 
 
