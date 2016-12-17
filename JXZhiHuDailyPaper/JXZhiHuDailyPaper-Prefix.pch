@@ -20,5 +20,10 @@
 #import "PureLayout.h"
 #import "MBProgressHUD.h"
 #import "FMDB.h"
+#import "NSDictionary+ChangeNull.h"
+#import "NSString+md5.h"
+#import "NSArray+JXSort.h"
+#import "YYCache.h"
+#import "JXCache.h"
 #endif
 #endif /* JXZhiHuDailyPaper_Prefix_pch */

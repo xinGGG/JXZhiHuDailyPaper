@@ -14,6 +14,12 @@
 		21CEC0B61E0177DE0032B7AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CEC0B41E0177DE0032B7AF /* LaunchScreen.storyboard */; };
 		21CEC0C11E0177DF0032B7AF /* JXZhiHuDailyPaperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CEC0C01E0177DF0032B7AF /* JXZhiHuDailyPaperTests.m */; };
 		21E523251E018AF200B67CCF /* FMDatabaseQueue+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523241E018AF200B67CCF /* FMDatabaseQueue+Extension.m */; };
+		21E5232F1E02635200B67CCF /* JXViewModelNavigationImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5232E1E02635200B67CCF /* JXViewModelNavigationImpl.m */; };
+		21E523421E0516CB00B67CCF /* JXNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523411E0516CB00B67CCF /* JXNetWork.m */; };
+		21E523451E05174A00B67CCF /* NSDictionary+ChangeNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523441E05174A00B67CCF /* NSDictionary+ChangeNull.m */; };
+		21E5234B1E0518BC00B67CCF /* NSArray+JXSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5234A1E0518BC00B67CCF /* NSArray+JXSort.m */; };
+		21E5234E1E0518FD00B67CCF /* NSString+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5234D1E0518FD00B67CCF /* NSString+md5.m */; };
+		21E523511E0519B300B67CCF /* JXCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523501E0519B300B67CCF /* JXCache.m */; };
 		3C0F290019450237B86BB74C /* libPods-JXZhiHuDailyPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +50,19 @@
 		21E523201E01897100B67CCF /* JXConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXConstant.h; sourceTree = "<group>"; };
 		21E523231E018AF200B67CCF /* FMDatabaseQueue+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabaseQueue+Extension.h"; sourceTree = "<group>"; };
 		21E523241E018AF200B67CCF /* FMDatabaseQueue+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabaseQueue+Extension.m"; sourceTree = "<group>"; };
+		21E5232A1E02630A00B67CCF /* JXViewModelNavigationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXViewModelNavigationProtocol.h; sourceTree = "<group>"; };
+		21E5232D1E02635200B67CCF /* JXViewModelNavigationImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXViewModelNavigationImpl.h; sourceTree = "<group>"; };
+		21E5232E1E02635200B67CCF /* JXViewModelNavigationImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXViewModelNavigationImpl.m; sourceTree = "<group>"; };
+		21E523401E0516CB00B67CCF /* JXNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXNetWork.h; sourceTree = "<group>"; };
+		21E523411E0516CB00B67CCF /* JXNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXNetWork.m; sourceTree = "<group>"; };
+		21E523431E05174A00B67CCF /* NSDictionary+ChangeNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ChangeNull.h"; sourceTree = "<group>"; };
+		21E523441E05174A00B67CCF /* NSDictionary+ChangeNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ChangeNull.m"; sourceTree = "<group>"; };
+		21E523491E0518BC00B67CCF /* NSArray+JXSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JXSort.h"; sourceTree = "<group>"; };
+		21E5234A1E0518BC00B67CCF /* NSArray+JXSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JXSort.m"; sourceTree = "<group>"; };
+		21E5234C1E0518FD00B67CCF /* NSString+md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+md5.h"; sourceTree = "<group>"; };
+		21E5234D1E0518FD00B67CCF /* NSString+md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+md5.m"; sourceTree = "<group>"; };
+		21E5234F1E0519B300B67CCF /* JXCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCache.h; sourceTree = "<group>"; };
+		21E523501E0519B300B67CCF /* JXCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCache.m; sourceTree = "<group>"; };
 		40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXZhiHuDailyPaper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67E17D84807227AED4359A3 /* Pods-JXZhiHuDailyPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXZhiHuDailyPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXZhiHuDailyPaper/Pods-JXZhiHuDailyPaper.release.xcconfig"; sourceTree = "<group>"; };
 		E9CC5AF12DC0FF188A06117A /* Pods-JXZhiHuDailyPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXZhiHuDailyPaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXZhiHuDailyPaper/Pods-JXZhiHuDailyPaper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,10 +121,10 @@
 			children = (
 				21CEC0A91E0177DE0032B7AF /* AppDelegate.h */,
 				21CEC0AA1E0177DE0032B7AF /* AppDelegate.m */,
-				21E5231D1E01897100B67CCF /* Model */,
 				21E5231E1E01897100B67CCF /* Util */,
-				21E523211E01897100B67CCF /* View */,
+				21E5231D1E01897100B67CCF /* Model */,
 				21E523221E01897100B67CCF /* ViewModel */,
+				21E523211E01897100B67CCF /* View */,
 				21CEC0A61E0177DE0032B7AF /* Supporting Files */,
 			);
 			path = JXZhiHuDailyPaper;
@@ -145,8 +164,18 @@
 			children = (
 				21E5231F1E01897100B67CCF /* JXConfig.h */,
 				21E523201E01897100B67CCF /* JXConstant.h */,
+				21E523401E0516CB00B67CCF /* JXNetWork.h */,
+				21E523411E0516CB00B67CCF /* JXNetWork.m */,
+				21E5234F1E0519B300B67CCF /* JXCache.h */,
+				21E523501E0519B300B67CCF /* JXCache.m */,
 				21E523231E018AF200B67CCF /* FMDatabaseQueue+Extension.h */,
 				21E523241E018AF200B67CCF /* FMDatabaseQueue+Extension.m */,
+				21E5234C1E0518FD00B67CCF /* NSString+md5.h */,
+				21E5234D1E0518FD00B67CCF /* NSString+md5.m */,
+				21E523431E05174A00B67CCF /* NSDictionary+ChangeNull.h */,
+				21E523441E05174A00B67CCF /* NSDictionary+ChangeNull.m */,
+				21E523491E0518BC00B67CCF /* NSArray+JXSort.h */,
+				21E5234A1E0518BC00B67CCF /* NSArray+JXSort.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -161,6 +190,9 @@
 		21E523221E01897100B67CCF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				21E5232A1E02630A00B67CCF /* JXViewModelNavigationProtocol.h */,
+				21E5232D1E02635200B67CCF /* JXViewModelNavigationImpl.h */,
+				21E5232E1E02635200B67CCF /* JXViewModelNavigationImpl.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -329,8 +361,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E5234B1E0518BC00B67CCF /* NSArray+JXSort.m in Sources */,
 				21CEC0AB1E0177DE0032B7AF /* AppDelegate.m in Sources */,
+				21E523511E0519B300B67CCF /* JXCache.m in Sources */,
+				21E5234E1E0518FD00B67CCF /* NSString+md5.m in Sources */,
 				21E523251E018AF200B67CCF /* FMDatabaseQueue+Extension.m in Sources */,
+				21E5232F1E02635200B67CCF /* JXViewModelNavigationImpl.m in Sources */,
+				21E523451E05174A00B67CCF /* NSDictionary+ChangeNull.m in Sources */,
+				21E523421E0516CB00B67CCF /* JXNetWork.m in Sources */,
 				21CEC0A81E0177DE0032B7AF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
