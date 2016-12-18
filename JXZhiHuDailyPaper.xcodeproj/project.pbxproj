@@ -31,6 +31,13 @@
 		21E523811E0668F000B67CCF /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 21E523781E0668F000B67CCF /* README.md */; };
 		21E523841E066E5800B67CCF /* AFTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523831E066E5800B67CCF /* AFTestCase.m */; };
 		21E523861E066E9200B67CCF /* JXNetWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523851E066E9200B67CCF /* JXNetWorkTests.m */; };
+		21E523891E06913400B67CCF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523881E06913400B67CCF /* NavigationViewController.m */; };
+		21E5238C1E06919E00B67CCF /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5238B1E06919E00B67CCF /* UIBarButtonItem+Extension.m */; };
+		21E5238F1E069BE100B67CCF /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5238E1E069BE100B67CCF /* UIView+Extension.m */; };
+		21E523921E06A65D00B67CCF /* JXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523911E06A65D00B67CCF /* JXBaseViewController.m */; };
+		21E523951E06A96C00B67CCF /* JXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523941E06A96C00B67CCF /* JXMainViewController.m */; };
+		21E523981E06B05C00B67CCF /* JXMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523971E06B05C00B67CCF /* JXMainViewModel.m */; };
+		21E5239B1E06B06A00B67CCF /* JXMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5239A1E06B06A00B67CCF /* JXMainModel.m */; };
 		3C0F290019450237B86BB74C /* libPods-JXZhiHuDailyPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */; };
 		4EDDED6B9D82A1C93BBC9C60 /* libPods-JXZhiHuDailyPaperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 148601ECE2C98FE7275C5845 /* libPods-JXZhiHuDailyPaperTests.a */; };
 /* End PBXBuildFile section */
@@ -89,6 +96,20 @@
 		21E523821E066E5800B67CCF /* AFTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTestCase.h; sourceTree = "<group>"; };
 		21E523831E066E5800B67CCF /* AFTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTestCase.m; sourceTree = "<group>"; };
 		21E523851E066E9200B67CCF /* JXNetWorkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXNetWorkTests.m; sourceTree = "<group>"; };
+		21E523871E06913400B67CCF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = JXZhiHuDailyPaper/ViewModel/NavigationViewController.h; sourceTree = SOURCE_ROOT; };
+		21E523881E06913400B67CCF /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationViewController.m; path = JXZhiHuDailyPaper/ViewModel/NavigationViewController.m; sourceTree = SOURCE_ROOT; };
+		21E5238A1E06919E00B67CCF /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Extension.h"; path = "../View/UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		21E5238B1E06919E00B67CCF /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Extension.m"; path = "../View/UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		21E5238D1E069BE100B67CCF /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		21E5238E1E069BE100B67CCF /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		21E523901E06A65D00B67CCF /* JXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBaseViewController.h; sourceTree = "<group>"; };
+		21E523911E06A65D00B67CCF /* JXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBaseViewController.m; sourceTree = "<group>"; };
+		21E523931E06A96C00B67CCF /* JXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMainViewController.h; sourceTree = "<group>"; };
+		21E523941E06A96C00B67CCF /* JXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainViewController.m; sourceTree = "<group>"; };
+		21E523961E06B05C00B67CCF /* JXMainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMainViewModel.h; sourceTree = "<group>"; };
+		21E523971E06B05C00B67CCF /* JXMainViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainViewModel.m; sourceTree = "<group>"; };
+		21E523991E06B06A00B67CCF /* JXMainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMainModel.h; sourceTree = "<group>"; };
+		21E5239A1E06B06A00B67CCF /* JXMainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainModel.m; sourceTree = "<group>"; };
 		40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXZhiHuDailyPaper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FEC77FD960D7A1C4C262C3 /* Pods-JXZhiHuDailyPaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXZhiHuDailyPaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXZhiHuDailyPaperTests/Pods-JXZhiHuDailyPaperTests.release.xcconfig"; sourceTree = "<group>"; };
 		82EF97DE7EB270369B79EA43 /* Pods-JXZhiHuDailyPaperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXZhiHuDailyPaperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXZhiHuDailyPaperTests/Pods-JXZhiHuDailyPaperTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +211,8 @@
 		21E5231D1E01897100B67CCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				21E523991E06B06A00B67CCF /* JXMainModel.h */,
+				21E5239A1E06B06A00B67CCF /* JXMainModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +220,8 @@
 		21E5231E1E01897100B67CCF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				21E5234C1E0518FD00B67CCF /* NSString+md5.h */,
+				21E5234D1E0518FD00B67CCF /* NSString+md5.m */,
 				21E5231F1E01897100B67CCF /* JXConfig.h */,
 				21E523201E01897100B67CCF /* JXConstant.h */,
 				21E523401E0516CB00B67CCF /* JXNetWork.h */,
@@ -205,12 +230,16 @@
 				21E523501E0519B300B67CCF /* JXCache.m */,
 				21E523231E018AF200B67CCF /* FMDatabaseQueue+Extension.h */,
 				21E523241E018AF200B67CCF /* FMDatabaseQueue+Extension.m */,
-				21E5234C1E0518FD00B67CCF /* NSString+md5.h */,
-				21E5234D1E0518FD00B67CCF /* NSString+md5.m */,
 				21E523431E05174A00B67CCF /* NSDictionary+ChangeNull.h */,
 				21E523441E05174A00B67CCF /* NSDictionary+ChangeNull.m */,
 				21E523491E0518BC00B67CCF /* NSArray+JXSort.h */,
 				21E5234A1E0518BC00B67CCF /* NSArray+JXSort.m */,
+				21E5238A1E06919E00B67CCF /* UIBarButtonItem+Extension.h */,
+				21E5238B1E06919E00B67CCF /* UIBarButtonItem+Extension.m */,
+				21E523871E06913400B67CCF /* NavigationViewController.h */,
+				21E523881E06913400B67CCF /* NavigationViewController.m */,
+				21E5238D1E069BE100B67CCF /* UIView+Extension.h */,
+				21E5238E1E069BE100B67CCF /* UIView+Extension.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -218,6 +247,10 @@
 		21E523211E01897100B67CCF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				21E523901E06A65D00B67CCF /* JXBaseViewController.h */,
+				21E523911E06A65D00B67CCF /* JXBaseViewController.m */,
+				21E523931E06A96C00B67CCF /* JXMainViewController.h */,
+				21E523941E06A96C00B67CCF /* JXMainViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +261,8 @@
 				21E5232A1E02630A00B67CCF /* JXViewModelNavigationProtocol.h */,
 				21E5232D1E02635200B67CCF /* JXViewModelNavigationImpl.h */,
 				21E5232E1E02635200B67CCF /* JXViewModelNavigationImpl.m */,
+				21E523961E06B05C00B67CCF /* JXMainViewModel.h */,
+				21E523971E06B05C00B67CCF /* JXMainViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -495,13 +530,20 @@
 			files = (
 				21E5237F1E0668F000B67CCF /* TWMessageBarManager.m in Sources */,
 				21E5234B1E0518BC00B67CCF /* NSArray+JXSort.m in Sources */,
+				21E5239B1E06B06A00B67CCF /* JXMainModel.m in Sources */,
 				21CEC0AB1E0177DE0032B7AF /* AppDelegate.m in Sources */,
 				21E523511E0519B300B67CCF /* JXCache.m in Sources */,
 				21E523811E0668F000B67CCF /* README.md in Sources */,
+				21E523981E06B05C00B67CCF /* JXMainViewModel.m in Sources */,
 				21E5234E1E0518FD00B67CCF /* NSString+md5.m in Sources */,
 				21E523251E018AF200B67CCF /* FMDatabaseQueue+Extension.m in Sources */,
+				21E523951E06A96C00B67CCF /* JXMainViewController.m in Sources */,
 				21E5232F1E02635200B67CCF /* JXViewModelNavigationImpl.m in Sources */,
+				21E523891E06913400B67CCF /* NavigationViewController.m in Sources */,
+				21E523921E06A65D00B67CCF /* JXBaseViewController.m in Sources */,
 				21E523451E05174A00B67CCF /* NSDictionary+ChangeNull.m in Sources */,
+				21E5238F1E069BE100B67CCF /* UIView+Extension.m in Sources */,
+				21E5238C1E06919E00B67CCF /* UIBarButtonItem+Extension.m in Sources */,
 				21E523421E0516CB00B67CCF /* JXNetWork.m in Sources */,
 				21CEC0A81E0177DE0032B7AF /* main.m in Sources */,
 			);
