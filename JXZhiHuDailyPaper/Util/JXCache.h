@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class YYCache;
 @interface JXCache : NSObject
 + (YYCache *)AppCache;
 @end

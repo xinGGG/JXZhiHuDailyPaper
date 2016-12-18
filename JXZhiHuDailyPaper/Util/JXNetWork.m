@@ -53,10 +53,8 @@ ignoreParameters:(NSArray *)ignoreParameters
     manager.requestSerializer.timeoutInterval = TIMEOUT;
     manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     NSMutableDictionary *parameter = [[NSMutableDictionary alloc] initWithDictionary:parameters];
-    //
     NSLog(@"接口 ==== %@",URLString);
     NSLog(@"参数 ==== %@",parameter);
-    
     NSString *cacheKey = @"";
     if (cache) {
         cacheKey = [self setupCacheWithUrl:URLString parameters:parameter removeParameterArray:ignoreParameters];
@@ -66,142 +64,82 @@ ignoreParameters:(NSArray *)ignoreParameters
     [manager POST:URLString parameters:parameter progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求线程------%@   : %@",URLString,[NSThread currentThread]);
-        //一个方法 只有成功返回 写入缓存
-        [self Response:responseObject CacheDispose:CacheDisposeWrite withCacheKey:cacheKey success:^(id responseObject) {
+        //只有成功返回 写入缓存
+        [self Response:responseObject withCacheKey:cacheKey success:^(id responseObject) {
             success(responseObject);
         }];
         [manager.session finishTasksAndInvalidate];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //成功+失败返回
-        [self Response:responseObject CacheDispose:CacheDisposeRead withCacheKey:cacheKey success:^(id responseObject) {
+        [self Response:nil withCacheKey:cacheKey success:^(id responseObject) {
             success(responseObject);
+        }failure:^(NSError *subError) {
+            JXError(subError.domain);
+            failure(error);
         }];
         [manager.session finishTasksAndInvalidate];
     }];
 }
 
-#pragma mark - 请求后数据统一处理
-- (void)Response:(id)response
-    CacheDispose:(CacheDispose)cacheDispose
-    withCacheKey:(NSString *)CacheKey
-         success:(void(^)(id responseObject))success{
-    [self Response:response CacheDispose:cacheDispose withCacheKey:CacheKey success:success failure:nil];
-};
 
-#pragma mark - 成功&写入缓存
-- (void)Response:(id)response
-    CacheDispose:(CacheDispose)cacheDispose
-    withCacheKey:(NSString *)CacheKey
-         success:(void(^)(id responseObject))success
-         failure:(void(^)(NSError *error))failure{
-    
-    //无数据传入
-    //写入缓存
-    if (cacheDispose==CacheDisposeRead) {
-        response = [[JXCache AppCache] objectForKey:CacheKey];
-        if (response==nil) {
-            failure(nil);
-            return;
-        }
-    }
-    //排空处理 防闪退保平安
-    response = [NSDictionary nullDic:response];
-    if (success) {
-        //写入缓存
-        if (CacheKey.length>0 && cacheDispose==CacheDisposeWrite) {
-            //写入缓存
-            [[JXCache AppCache] setObject:response forKey:CacheKey];
-        }
-        //回调
-        if(response != nil){
-            success(response);
-        }else{
-            success(nil);
-        }
-    }else{
-        success(nil);
-    }
-    
-    
-}
 
-#pragma mark - 失败&读取缓存
-- (void)readResponse:(id)response
-        withCacheKey:(NSString *)CacheKey
-             success:(void(^)(id responseObject))success
-             failure:(void(^)(NSError *error))failure{
-    
-    id responseObject = [[JXCache AppCache] objectForKey:CacheKey];
-    if (responseObject !=nil && success){
-        [self responseObject:responseObject success:^(id responseObject) {
+-(void)GET:(NSString *)URLString
+ parameters:(id)parameters
+    success:(void(^)(id responseObject))success
+    failure:(void(^)(NSError *error))failure
+{
+    [self GET:URLString parameters:parameters cache:NO ignoreParameters:nil success:^(id responseObject) {
+        if(success){
             success(responseObject);
-            NSLog(@"公用方法 读取缓存");
-        }];
-    }else{
-        NSLog(@"error =========%@",[error userInfo]);
+        }
+    } failure:^(NSError *error) {
         if (failure) {
             failure(error);
         }
-    }
-    
-    //排空处理 防闪退保平安
-    response = [NSDictionary nullDic:response];
-    if (success) {
-        //写入缓存
-        if (CacheKey.length>0) {
-            [[JXCache AppCache] setObject:response forKey:CacheKey];
-        }
-        //回调
-        if(response != nil){
-            success(response);
-        }else{
-            success(nil);
-        }
-    }else{
-        success(nil);
-    }
+    }];
 }
 
 
-
-- (void)GET:(NSString *)URLString
+-(void)GET:(NSString *)URLString
  parameters:(id)parameters
+      cache:(BOOL)cache
+ignoreParameters:(NSArray *)ignoreParameters
     success:(void(^)(id responseObject))success
-    failure:(void(^)(NSError *error))failure {
+    failure:(void(^)(NSError *error))failure
+{
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = TIMEOUT;
+    manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     NSMutableDictionary *parameter = [[NSMutableDictionary alloc] initWithDictionary:parameters];
     NSLog(@"接口 ==== %@",URLString);
-    NSLog(@"参数 ==== %@",parameters);
+    NSLog(@"参数 ==== %@",parameter);
+    NSString *cacheKey = @"";
+    if (cache) {
+        cacheKey = [self setupCacheWithUrl:URLString parameters:parameter removeParameterArray:ignoreParameters];
+        NSLog(@"缓存配置key %@",cacheKey);
+    }
+    
     [manager GET:URLString parameters:parameter progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (success) {
-            
-        }
+        NSLog(@"请求线程------%@   : %@",URLString,[NSThread currentThread]);
+        //只有成功返回 写入缓存
+        [self Response:responseObject withCacheKey:cacheKey success:^(id responseObject) {
+            success(responseObject);
+        }];
         [manager.session finishTasksAndInvalidate];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error =========%@",[error userInfo]);
-        
-        if (failure) {
+        //成功+失败返回
+        [self Response:nil withCacheKey:cacheKey success:^(id responseObject) {
+            success(responseObject);
+        }failure:^(NSError *subError) {
+            JXError(subError.domain);
             failure(error);
-        }
+        }];
         [manager.session finishTasksAndInvalidate];
     }];
 }
 
-
-#pragma mark  请求成功拦截
-- (void)responseObject:(id)responseObject success:(void(^)(id responseObject))success{
-    if (success) {
-        //登录状态优先
-        if(responseObject != nil){
-            success(responseObject);
-        }else{
-            success(nil);
-        }
-    }
-}
 
 
 #pragma mark  上传下载
@@ -407,6 +345,7 @@ ignoreParameters:(NSArray *)ignoreParameters
     }
     NSLog(@"%@",newParameter);
     NSString *headInfo = [self setupHeadInfo:newParameter];
+    self.cacheKeyConlose = [headInfo md5HexDigest];
     return [headInfo md5HexDigest];
 }
 
@@ -435,6 +374,53 @@ ignoreParameters:(NSArray *)ignoreParameters
     }
     return headInfo;
 }
+#pragma mark - 请求后数据统一处理
+#pragma mark - 成功&写入缓存
+- (void)Response:(id)response
+    withCacheKey:(NSString *)CacheKey
+         success:(void(^)(id responseObject))success{
+    [self Response:response withCacheKey:CacheKey success:success failure:nil];
+};
+#pragma mark  成功&写入缓存&失败
+- (void)Response:(id)response
+    withCacheKey:(NSString *)CacheKey
+         success:(void(^)(id responseObject))success
+         failure:(void(^)(NSError *error))failure{
+    
+    //是否有请求数据
+    BOOL isCache = (response == nil);
+    
+    if (isCache) {
+        response = [[JXCache AppCache] objectForKey:CacheKey];
+        if (response==nil) {
+            //无数据传入
+            //先看是否有缓存
+            if (failure) {
+                failure(ErrorTitle(@"No Cache -> Connect Error"));
+                return;
+            }
+        }
+    }
+    //排空处理 防闪退保平安
+    response = [NSDictionary nullDic:response];
+    if (success) {
+        if (CacheKey.length>0 && !isCache) {
+            //写入缓存
+            [[JXCache AppCache] setObject:response forKey:CacheKey];
+        }
+        //回调
+        if(response != nil){
+            success(response);
+        }else{
+            success(nil);
+        }
+    }else{
+        success(nil);
+    }
+    
+    
+}
+
 
 #pragma mark - 网络请求取消
 #pragma mark -

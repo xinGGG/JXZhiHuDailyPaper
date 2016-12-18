@@ -25,5 +25,7 @@
 #import "NSArray+JXSort.h"
 #import "YYCache.h"
 #import "JXCache.h"
+#import "TWMessageBarManager.h"
+#import "JXNetWork.h"
 #endif
 #endif /* JXZhiHuDailyPaper_Prefix_pch */

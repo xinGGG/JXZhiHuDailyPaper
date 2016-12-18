@@ -18,8 +18,8 @@ typedef enum{
 @interface JXNetWork : NSObject
 
 
-
 +(instancetype) defaultUtil;
+
 
 //POST方法
 -(void)POST:(NSString *)URLString
@@ -35,8 +35,15 @@ ignoreParameters:(NSArray *)ignoreParameters
     failure:(void(^)(NSError *error))failure;
 
 //GET方法
-- (void)GET:(NSString *)URLString
+-(void)GET:(NSString *)URLString
  parameters:(id)parameters
+    success:(void(^)(id responseObject))success
+    failure:(void(^)(NSError *error))failure;
+
+-(void)GET:(NSString *)URLString
+ parameters:(id)parameters
+      cache:(BOOL)cache
+ignoreParameters:(NSArray *)ignoreParameters
     success:(void(^)(id responseObject))success
     failure:(void(^)(NSError *error))failure;
 
@@ -66,7 +73,9 @@ ignoreParameters:(NSArray *)ignoreParameters
         failure:(void(^)(NSError *error))failure;
 
 
-
+//获取缓存key
+@property (nonatomic,strong) NSString *cacheKeyConlose;
+- (NSString *)setupCacheWithUrl:(NSString *)Url parameters:(NSDictionary *)parameters removeParameterArray:(NSArray *)parameterArray;
 
 -(void)cancelAllRequest;
 

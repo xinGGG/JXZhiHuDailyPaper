@@ -7,6 +7,7 @@
 //
 
 #import "JXCache.h"
+#import "YYCache.h"
 
 @implementation JXCache
 + (YYCache *)AppCache
