@@ -9,6 +9,7 @@ pod 'SDWebImage', '~>3.6'
 pod 'ReactiveCocoa','~>2.4'
 pod 'FMDB', '2.6.2'
 pod 'YYCache'
+pod 'ReactiveViewModel', '0.1.1'
 end
 
 target 'JXZhiHuDailyPaperTests' do
@@ -21,5 +22,7 @@ target 'JXZhiHuDailyPaperTests' do
     pod 'ReactiveCocoa','~>2.4'
     pod 'FMDB', '2.6.2'
     pod 'YYCache'
+    pod 'ReactiveViewModel', '0.1.1'
+
 end
 

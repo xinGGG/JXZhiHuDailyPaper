@@ -27,9 +27,10 @@
 #import "JXCache.h"
 #import "TWMessageBarManager.h"
 #import "JXNetWork.h"
-
 #import "UIBarButtonItem+Extension.h"
 #import "NavigationViewController.h"
 #import "UIView+Extension.h"
+#import "RVMViewModel.h"
+
 #endif
 #endif /* JXZhiHuDailyPaper_Prefix_pch */

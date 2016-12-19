@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FMDatabaseQueue+Extension.h"
 #import "JXMainViewController.h"
+#import "JXMainViewModel.h"
 @interface AppDelegate ()
 
 @end
@@ -23,6 +24,8 @@
     [self configureKeyboardManager];
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     JXMainViewController *main = [[JXMainViewController alloc] init];
+    JXMainViewModel *viewModel = [[JXMainViewModel alloc] init];
+    main.viewModel = viewModel;
     NavigationViewController *nav = [[NavigationViewController alloc] initWithRootViewController:main];
     self.window.rootViewController = nav;
     return YES;

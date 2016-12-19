@@ -28,6 +28,8 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - ReactiveViewModel (0.1.1):
+    - ReactiveCocoa (~> 2.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -41,6 +43,7 @@ DEPENDENCIES:
   - pop
   - PureLayout
   - ReactiveCocoa (~> 2.4)
+  - ReactiveViewModel (= 0.1.1)
   - SDWebImage (~> 3.6)
   - YYCache
 
@@ -52,9 +55,10 @@ SPEC CHECKSUMS:
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 171492c2d30d3eb3c89730fd180c0f6a2ae7e774
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: eff5c5ad4e7a9ef8e4d1b91ee972b06fe0e200fb
+PODFILE CHECKSUM: aa587e1be111b5f4b1a95459f4296735271b1a45
 
 COCOAPODS: 1.1.1

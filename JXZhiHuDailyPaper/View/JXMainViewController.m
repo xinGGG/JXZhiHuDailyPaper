@@ -8,6 +8,7 @@
 
 #import "JXMainViewController.h"
 #import "JXMainViewModel.h"
+
 @interface JXMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @end
@@ -47,10 +48,42 @@
     // Do any additional setup after loading the view.
 
     @weakify(self);
+    //本地数据相应
     [self.viewModel.updatedContentSignal subscribeNext:^(id x) {
         @strongify(self);
+        [self.tableView reloadData];
     }];
     
+    //网络请求成功处理
+    [self.viewModel.getDataCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
+        JXSuccess(@"ok");
+        NSLog(@"%@",x);
+    }];
+    
+    //错误操作
+    [self.viewModel.connectionErrors subscribeNext:^(id x) {
+        JXError(x);
+    }];
+    
+    //加载操作
+    [self.viewModel.getDataCommand.executing subscribeNext:^(id x) {
+        BOOL isLoading = [x boolValue];
+        if (isLoading) {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }else{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }
+    }];
+    
+    
+    ///////test///////
+    //发起网络请求
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.viewModel.getDataCommand execute:@1];
+    });
+    ///////test///////
+
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -6,8 +6,14 @@
 //  Copyright © 2016年 ljx. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "RVMViewModel.h"
 
-@interface JXMainViewModel : NSObject
-@property (nonatomic,strong) RACSignal *updatedContentSignal;
+@interface JXMainViewModel : RVMViewModel
+//更新成功信号
+@property (nonatomic,readonly) RACSignal     *updatedContentSignal;
+//报错信号
+@property (nonatomic, strong) RACSignal    *connectionErrors;
+@property (nonatomic, strong) RACCommand   *getDataCommand;
+
+
 @end

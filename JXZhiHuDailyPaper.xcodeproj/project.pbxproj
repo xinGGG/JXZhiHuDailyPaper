@@ -37,7 +37,7 @@
 		21E523921E06A65D00B67CCF /* JXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523911E06A65D00B67CCF /* JXBaseViewController.m */; };
 		21E523951E06A96C00B67CCF /* JXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523941E06A96C00B67CCF /* JXMainViewController.m */; };
 		21E523981E06B05C00B67CCF /* JXMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E523971E06B05C00B67CCF /* JXMainViewModel.m */; };
-		21E5239B1E06B06A00B67CCF /* JXMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5239A1E06B06A00B67CCF /* JXMainModel.m */; };
+		21E5239E1E06DCE300B67CCF /* JXStorieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5239D1E06DCE300B67CCF /* JXStorieModel.m */; };
 		3C0F290019450237B86BB74C /* libPods-JXZhiHuDailyPaper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */; };
 		4EDDED6B9D82A1C93BBC9C60 /* libPods-JXZhiHuDailyPaperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 148601ECE2C98FE7275C5845 /* libPods-JXZhiHuDailyPaperTests.a */; };
 /* End PBXBuildFile section */
@@ -108,8 +108,8 @@
 		21E523941E06A96C00B67CCF /* JXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainViewController.m; sourceTree = "<group>"; };
 		21E523961E06B05C00B67CCF /* JXMainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMainViewModel.h; sourceTree = "<group>"; };
 		21E523971E06B05C00B67CCF /* JXMainViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainViewModel.m; sourceTree = "<group>"; };
-		21E523991E06B06A00B67CCF /* JXMainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMainModel.h; sourceTree = "<group>"; };
-		21E5239A1E06B06A00B67CCF /* JXMainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainModel.m; sourceTree = "<group>"; };
+		21E5239C1E06DCE300B67CCF /* JXStorieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXStorieModel.h; sourceTree = "<group>"; };
+		21E5239D1E06DCE300B67CCF /* JXStorieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXStorieModel.m; sourceTree = "<group>"; };
 		40BCCDC36A9E15E1E678A9DF /* libPods-JXZhiHuDailyPaper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXZhiHuDailyPaper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FEC77FD960D7A1C4C262C3 /* Pods-JXZhiHuDailyPaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXZhiHuDailyPaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXZhiHuDailyPaperTests/Pods-JXZhiHuDailyPaperTests.release.xcconfig"; sourceTree = "<group>"; };
 		82EF97DE7EB270369B79EA43 /* Pods-JXZhiHuDailyPaperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXZhiHuDailyPaperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXZhiHuDailyPaperTests/Pods-JXZhiHuDailyPaperTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 		21E5231D1E01897100B67CCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				21E523991E06B06A00B67CCF /* JXMainModel.h */,
-				21E5239A1E06B06A00B67CCF /* JXMainModel.m */,
+				21E5239C1E06DCE300B67CCF /* JXStorieModel.h */,
+				21E5239D1E06DCE300B67CCF /* JXStorieModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,10 +247,10 @@
 		21E523211E01897100B67CCF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				21E523901E06A65D00B67CCF /* JXBaseViewController.h */,
-				21E523911E06A65D00B67CCF /* JXBaseViewController.m */,
 				21E523931E06A96C00B67CCF /* JXMainViewController.h */,
 				21E523941E06A96C00B67CCF /* JXMainViewController.m */,
+				21E523901E06A65D00B67CCF /* JXBaseViewController.h */,
+				21E523911E06A65D00B67CCF /* JXBaseViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -530,7 +530,6 @@
 			files = (
 				21E5237F1E0668F000B67CCF /* TWMessageBarManager.m in Sources */,
 				21E5234B1E0518BC00B67CCF /* NSArray+JXSort.m in Sources */,
-				21E5239B1E06B06A00B67CCF /* JXMainModel.m in Sources */,
 				21CEC0AB1E0177DE0032B7AF /* AppDelegate.m in Sources */,
 				21E523511E0519B300B67CCF /* JXCache.m in Sources */,
 				21E523811E0668F000B67CCF /* README.md in Sources */,
@@ -546,6 +545,7 @@
 				21E5238C1E06919E00B67CCF /* UIBarButtonItem+Extension.m in Sources */,
 				21E523421E0516CB00B67CCF /* JXNetWork.m in Sources */,
 				21CEC0A81E0177DE0032B7AF /* main.m in Sources */,
+				21E5239E1E06DCE300B67CCF /* JXStorieModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
