@@ -16,4 +16,9 @@
 @property (nonatomic, strong) RACCommand   *getDataCommand;
 
 
+-(NSInteger)numberOfSections;
+-(NSInteger)numberOfItemsInSection:(NSInteger)section;
+-(NSString *)titleForSection:(NSInteger)section;
+-(NSString *)titleAtIndexPath:(NSIndexPath *)indexPath;
+-(NSString *)subtitleAtIndexPath:(NSIndexPath *)indexPath;
 @end
