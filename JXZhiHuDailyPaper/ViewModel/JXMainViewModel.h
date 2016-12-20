@@ -7,7 +7,7 @@
 //
 
 #import "RVMViewModel.h"
-
+@class JXStorieModel;
 @interface JXMainViewModel : RVMViewModel
 //更新成功信号
 @property (nonatomic,readonly) RACSignal     *updatedContentSignal;
@@ -19,6 +19,5 @@
 -(NSInteger)numberOfSections;
 -(NSInteger)numberOfItemsInSection:(NSInteger)section;
 -(NSString *)titleForSection:(NSInteger)section;
--(NSString *)titleAtIndexPath:(NSIndexPath *)indexPath;
--(NSString *)subtitleAtIndexPath:(NSIndexPath *)indexPath;
+- (JXStorieModel *)modelAtIndexPath:(NSIndexPath *)indexPath;
 @end

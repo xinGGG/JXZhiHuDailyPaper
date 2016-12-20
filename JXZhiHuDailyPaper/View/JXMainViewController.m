@@ -8,7 +8,7 @@
 
 #import "JXMainViewController.h"
 #import "JXMainViewModel.h"
-
+#import "JXMainTableViewCell.h"
 @interface JXMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @end
@@ -55,7 +55,6 @@
         NSLog(@"%@",x);
         JXSuccess(@"更新成功");
         [self.tableView reloadData];
-        
     }];
     
     //加载操作
@@ -81,14 +80,12 @@
         [self.viewModel.getDataCommand execute:@1];
     });
     ///////test///////
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - tableView-delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -101,9 +98,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    JXMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if(cell==nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        cell = [[JXMainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
@@ -115,13 +112,17 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
+
+- (void)configureCell:(JXMainTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
     //    cell.textLabel.text = @"title";
     //    cell.detailTextLabel.text = @"content";
-    cell.textLabel.text = [self.viewModel titleAtIndexPath:indexPath];
-    cell.detailTextLabel.text = [self.viewModel subtitleAtIndexPath:indexPath];
+    cell.model = [self.viewModel modelAtIndexPath:indexPath];
 }
 
 

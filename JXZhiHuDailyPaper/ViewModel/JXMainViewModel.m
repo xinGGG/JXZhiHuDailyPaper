@@ -67,7 +67,13 @@
                                //////////////////数据处理//////////////////
                                NSArray *stories = [responseObject objectForKeyWithoutNull:@"stories"];
                                NSArray *date = [responseObject objectForKeyWithoutNull:@"date"];
-                               [info setObject:stories forKey:@"stories"];
+                               NSMutableArray *arrM = [NSMutableArray array];
+                               for (int i = 0; i<stories.count; i++) {
+                                   NSDictionary *dict = stories[i];
+                                   JXStorieModel *model = [JXStorieModel initWithDict:dict];
+                                   [arrM addObject:model];
+                               }
+                               [info setObject:arrM forKey:@"stories"];
                                [info setObject:date forKey:@"date"];
                                [self.dataArray addObject:info];
                                //////////////////数据处理//////////////////
@@ -83,10 +89,19 @@
     [(RACSubject *)self.updatedContentSignal sendNext:nil];
 }
 
+#pragma mark - 单条数据模型处理
+- (JXStorieModel *)modelAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *Section = self.dataArray[indexPath.section];
+    NSArray *stories = [Section objectForKeyWithoutNull:@"stories"];
+    JXStorieModel *info = stories[indexPath.row];
+    return info;
+}
+
 #pragma mark - tableView
 -(NSInteger)numberOfSections{
     return self.dataArray.count;
 }
+
 -(NSInteger)numberOfItemsInSection:(NSInteger)section{
     NSDictionary *dateData = self.dataArray[section];
     NSArray *stories = [dateData objectForKeyWithoutNull:@"stories"];
@@ -99,19 +114,7 @@
     return dateTitle;
 }
 
--(NSString *)titleAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *Section = self.dataArray[indexPath.section];
-    NSArray *stories = [Section objectForKeyWithoutNull:@"stories"];
-    NSDictionary *info = stories[indexPath.row];
-    return [NSString stringWithFormat:@"%@",[info objectForKeyWithoutNull:@"title"]];
-}
 
--(NSString *)subtitleAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *Section = self.dataArray[indexPath.section];
-    NSArray *stories = [Section objectForKeyWithoutNull:@"stories"];
-    NSDictionary *info = stories[indexPath.row];
-    return [NSString stringWithFormat:@"%@",[info objectForKeyWithoutNull:@"ga_prefix"]];
-}
 
 
 @end

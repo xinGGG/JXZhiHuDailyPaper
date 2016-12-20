@@ -31,6 +31,6 @@
 #import "NavigationViewController.h"
 #import "UIView+Extension.h"
 #import "RVMViewModel.h"
-
+#import "UIImageView+WebCache.h"
 #endif
 #endif /* JXZhiHuDailyPaper_Prefix_pch */

@@ -120,6 +120,24 @@
 #define JX_LEFT_IMAGE_SIZE CGSizeMake(25, 25)
 #define JX_1PX_WIDTH (1 / [UIScreen mainScreen].scale)
 
+
+//字体
+#define FONT(F) [UIFont fontWithName:@"GothamSSm-Light" size:F]
+#define BOLDFONT(F) [UIFont fontWithName:@"GothamSSm-Bold" size:F]
+#define LightFONT(F) [UIFont fontWithName:@"GothamSSm-Light" size:F]
+//大标题 重要信息
+#define AFONT FONT(22)
+//用于列表标题
+#define BFONT FONT(17)
+//用于大多数文字
+#define CFONT FONT(15)
+//辅助文字
+#define DFONT FONT(13)
+//偶尔性提示数字等
+#define EFONT FONT(11)
+
+
+
 ///---------
 /// App Info
 ///---------

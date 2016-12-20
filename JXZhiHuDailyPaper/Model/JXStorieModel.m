@@ -11,7 +11,7 @@
 @implementation JXStorieModel
 
 +(instancetype)initWithDict:(NSDictionary *)dict{
-    return [[self alloc] initWithDictionary:dict];
+    return [[self alloc] initWithDict:dict];
 }
 -(instancetype)initWithDict:(NSDictionary *)dict{
     self = [super init];
