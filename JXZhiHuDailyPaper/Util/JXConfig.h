@@ -9,11 +9,10 @@
 #ifndef JXConfig_h
 #define JXConfig_h
 ///------------
-/// AppDelegate
+/// Navigation
 ///------------
 
-#define MRCSharedAppDelegate ((MRCAppDelegate *)[UIApplication sharedApplication].delegate)
-
+#define JXNowNavigation                  [[UIApplication sharedApplication] activityViewController].navigationController
 ///------------
 /// Client Info
 ///------------

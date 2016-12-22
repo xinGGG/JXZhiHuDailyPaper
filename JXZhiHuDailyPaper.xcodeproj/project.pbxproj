@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2152FF3F1E0936B400FB60C3 /* JXMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */; };
+		2152FF421E093F8B00FB60C3 /* JXBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF411E093F8B00FB60C3 /* JXBaseViewModel.m */; };
+		2152FF4C1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF4B1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m */; };
+		2152FF4F1E0BB91F00FB60C3 /* JXContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF4E1E0BB91F00FB60C3 /* JXContentViewController.m */; };
+		2152FF521E0BB94300FB60C3 /* JXContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF511E0BB94300FB60C3 /* JXContentViewModel.m */; };
 		21CEC0A81E0177DE0032B7AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CEC0A71E0177DE0032B7AF /* main.m */; };
 		21CEC0AB1E0177DE0032B7AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CEC0AA1E0177DE0032B7AF /* AppDelegate.m */; };
 		21CEC0B11E0177DE0032B7AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CEC0AF1E0177DE0032B7AF /* Main.storyboard */; };
@@ -57,6 +61,14 @@
 		148601ECE2C98FE7275C5845 /* libPods-JXZhiHuDailyPaperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXZhiHuDailyPaperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2152FF3D1E0936B400FB60C3 /* JXMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMainTableViewCell.h; sourceTree = "<group>"; };
 		2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainTableViewCell.m; sourceTree = "<group>"; };
+		2152FF401E093F8B00FB60C3 /* JXBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBaseViewModel.h; sourceTree = "<group>"; };
+		2152FF411E093F8B00FB60C3 /* JXBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBaseViewModel.m; sourceTree = "<group>"; };
+		2152FF4A1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ActivityViewController.h"; sourceTree = "<group>"; };
+		2152FF4B1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ActivityViewController.m"; sourceTree = "<group>"; };
+		2152FF4D1E0BB91F00FB60C3 /* JXContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXContentViewController.h; sourceTree = "<group>"; };
+		2152FF4E1E0BB91F00FB60C3 /* JXContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXContentViewController.m; sourceTree = "<group>"; };
+		2152FF501E0BB94300FB60C3 /* JXContentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXContentViewModel.h; sourceTree = "<group>"; };
+		2152FF511E0BB94300FB60C3 /* JXContentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXContentViewModel.m; sourceTree = "<group>"; };
 		21CEC0A31E0177DE0032B7AF /* JXZhiHuDailyPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXZhiHuDailyPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CEC0A71E0177DE0032B7AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21CEC0A91E0177DE0032B7AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -223,6 +235,8 @@
 		21E5231E1E01897100B67CCF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2152FF4A1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.h */,
+				2152FF4B1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m */,
 				21E5234C1E0518FD00B67CCF /* NSString+md5.h */,
 				21E5234D1E0518FD00B67CCF /* NSString+md5.m */,
 				21E5231F1E01897100B67CCF /* JXConfig.h */,
@@ -254,6 +268,8 @@
 				21E523941E06A96C00B67CCF /* JXMainViewController.m */,
 				2152FF3D1E0936B400FB60C3 /* JXMainTableViewCell.h */,
 				2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */,
+				2152FF4D1E0BB91F00FB60C3 /* JXContentViewController.h */,
+				2152FF4E1E0BB91F00FB60C3 /* JXContentViewController.m */,
 				21E523901E06A65D00B67CCF /* JXBaseViewController.h */,
 				21E523911E06A65D00B67CCF /* JXBaseViewController.m */,
 			);
@@ -268,6 +284,10 @@
 				21E5232E1E02635200B67CCF /* JXViewModelNavigationImpl.m */,
 				21E523961E06B05C00B67CCF /* JXMainViewModel.h */,
 				21E523971E06B05C00B67CCF /* JXMainViewModel.m */,
+				2152FF501E0BB94300FB60C3 /* JXContentViewModel.h */,
+				2152FF511E0BB94300FB60C3 /* JXContentViewModel.m */,
+				2152FF401E093F8B00FB60C3 /* JXBaseViewModel.h */,
+				2152FF411E093F8B00FB60C3 /* JXBaseViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -542,13 +562,17 @@
 				21E5234E1E0518FD00B67CCF /* NSString+md5.m in Sources */,
 				21E523251E018AF200B67CCF /* FMDatabaseQueue+Extension.m in Sources */,
 				21E523951E06A96C00B67CCF /* JXMainViewController.m in Sources */,
+				2152FF421E093F8B00FB60C3 /* JXBaseViewModel.m in Sources */,
 				21E5232F1E02635200B67CCF /* JXViewModelNavigationImpl.m in Sources */,
 				21E523891E06913400B67CCF /* NavigationViewController.m in Sources */,
 				21E523921E06A65D00B67CCF /* JXBaseViewController.m in Sources */,
+				2152FF521E0BB94300FB60C3 /* JXContentViewModel.m in Sources */,
 				21E523451E05174A00B67CCF /* NSDictionary+ChangeNull.m in Sources */,
+				2152FF4C1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m in Sources */,
 				21E5238F1E069BE100B67CCF /* UIView+Extension.m in Sources */,
 				21E5238C1E06919E00B67CCF /* UIBarButtonItem+Extension.m in Sources */,
 				21E523421E0516CB00B67CCF /* JXNetWork.m in Sources */,
+				2152FF4F1E0BB91F00FB60C3 /* JXContentViewController.m in Sources */,
 				21CEC0A81E0177DE0032B7AF /* main.m in Sources */,
 				2152FF3F1E0936B400FB60C3 /* JXMainTableViewCell.m in Sources */,
 				21E5239E1E06DCE300B67CCF /* JXStorieModel.m in Sources */,

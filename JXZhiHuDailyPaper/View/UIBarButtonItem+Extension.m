@@ -30,8 +30,8 @@
 +(instancetype)backItemWithTitle:(NSString *)title target:(id)target action:(SEL)action{
     
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backBtn setImage:[UIImage imageNamed:@"navigationbar_back_withtext_highlighted"] forState:UIControlStateHighlighted];
-    [backBtn setImage:[UIImage imageNamed:@"navigationbar_back_withtext"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"icon-back"] forState:UIControlStateHighlighted];
+    [backBtn setImage:[UIImage imageNamed:@"icon-back"] forState:UIControlStateNormal];
     [backBtn setTitle:title forState:UIControlStateNormal];
     
     // 添加颜色

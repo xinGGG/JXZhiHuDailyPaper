@@ -32,5 +32,6 @@
 #import "UIView+Extension.h"
 #import "RVMViewModel.h"
 #import "UIImageView+WebCache.h"
+#import "UIApplication+ActivityViewController.h"
 #endif
 #endif /* JXZhiHuDailyPaper_Prefix_pch */

@@ -88,7 +88,7 @@
     if (currentCount > 0 ) {
 
         //兼容右边手势滑动操作
-        UIBarButtonItem *item = [UIBarButtonItem itemWithNmlImg:@"public_nav_back_icon" hltImg:@"public_nav_back_icon" target:self action:@selector(popView)];
+        UIBarButtonItem *item = [UIBarButtonItem itemWithNmlImg:@"icon-back" hltImg:@"icon-back" target:self action:@selector(popView)];
         viewController.navigationItem.backBarButtonItem = item;
         viewController.navigationItem.leftBarButtonItem = item;
 //        [self.navigationItem setHidesBackButton:YES];

@@ -6,15 +6,18 @@
 //  Copyright © 2016年 ljx. All rights reserved.
 //
 
-#import "RVMViewModel.h"
+#import "JXBaseViewModel.h"
 @class JXStorieModel;
-@interface JXMainViewModel : RVMViewModel
+@interface JXMainViewModel : JXBaseViewModel
 //更新成功信号
 @property (nonatomic,readonly) RACSignal     *updatedContentSignal;
 //报错信号
 @property (nonatomic, strong) RACSignal    *connectionErrors;
 @property (nonatomic, strong) RACCommand   *getDataCommand;
+@property (nonatomic, strong) RACCommand   *clickCellCommand;
 
+//结果
+@property (nonatomic,strong) NSMutableArray     *dataArray;
 
 -(NSInteger)numberOfSections;
 -(NSInteger)numberOfItemsInSection:(NSInteger)section;

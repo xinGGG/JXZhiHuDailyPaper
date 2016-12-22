@@ -58,7 +58,7 @@
     
     [self._titleLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.contentView withOffset:15];
     [self._titleLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.contentView withOffset:15];
-    [self._titleLabel autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self._imgV withOffset:15];
+    [self._titleLabel autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self._imgV withOffset:-15];
     [self._titleLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.contentView withOffset:-15];
 }
 

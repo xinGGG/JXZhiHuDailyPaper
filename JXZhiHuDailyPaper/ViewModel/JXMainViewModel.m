@@ -10,7 +10,6 @@
 #import "JXStorieModel.h"
 @interface JXMainViewModel()
 @property (nonatomic, strong) RACSubject *updatedContentSignal;
-@property (nonatomic,strong) NSMutableArray     *dataArray;
 
 @end
 @implementation JXMainViewModel
@@ -25,6 +24,7 @@
 
 - (void)bind{
 
+    //ViewModel 首要原则不处理view上的功能
     self.dataArray = [NSMutableArray array];
     
     //开始数据绑定
@@ -37,9 +37,41 @@
         @strongify(self);
         return [self getDataSignal];
     }];
+    
+    //监听Array数据修改操作 刷新tablview 触发外部Command
+    [[self.dataArray rac_signalForSelector:@selector(addObject:)] subscribeNext:^(id x) {
+        [(RACSubject *)self.updatedContentSignal sendNext:nil];
+    }];
+    [[self.dataArray rac_signalForSelector:@selector(removeAllObjects)] subscribeNext:^(id x) {
+        [(RACSubject *)self.updatedContentSignal sendNext:nil];
+    }];
+
+    //报错提示
     self.connectionErrors = self.getDataCommand.errors;
+
+    //点击cell  VC执行 [Command execute:indexPath]
+    self.clickCellCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSIndexPath *indexPath) {
+        @strongify(self);
+        return [self clickCellSignal:indexPath];
+    }];
+    
+
+};
+
+//点击cell 内部实现跳转逻辑
+- (RACSignal *)clickCellSignal:(NSIndexPath *)indexPath{
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        JXStorieModel *model = [self modelAtIndexPath:indexPath];
+        NSLog(@"%@",model);
+        //JXNowNavigation 获取当前界面的Navigation;
+        [JXNowNavigation pushViewController:[UIViewController new] animated:YES];
+        [subscriber sendCompleted];
+        //信号一定要输出结束 不然会卡死 只能触发一次
+        return nil;
+    }];
 }
 
+//获取数据
 - (RACSignal *)getDataSignal
 {
     //内部实现信号并返回
@@ -60,7 +92,7 @@
 - (void)getDataWithSuccess:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
     [[JXNetWork defaultUtil] GET:@"http://news-at.zhihu.com/api/4/news/latest"
                       parameters:nil
-                           cache:YES ignoreParameters:nil success:^(id responseObject) {
+                           cache:NO ignoreParameters:nil success:^(id responseObject) {
                                [self.dataArray removeAllObjects];
                                NSMutableDictionary *info = [NSMutableDictionary dictionary];
                                

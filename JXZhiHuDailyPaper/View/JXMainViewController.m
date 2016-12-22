@@ -43,7 +43,7 @@
     // Do any additional setup after loading the view.
     
     @weakify(self);
-    //手工操作更新 demo
+    //监听数组变化 刷新tableView
     [self.viewModel.updatedContentSignal subscribeNext:^(id x) {
         @strongify(self);
         [self.tableView reloadData];
@@ -54,7 +54,8 @@
         @strongify(self);
         NSLog(@"%@",x);
         JXSuccess(@"更新成功");
-        [self.tableView reloadData];
+        //这部分应该通过 数组变化来做刷新 一个方法尽量只作一个事情。如果ViewModel要清空数组（额外清空）这部分就会造成耦合
+        //[self.tableView reloadData];
     }];
     
     //加载操作
@@ -112,7 +113,7 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self.viewModel.clickCellCommand execute:indexPath];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
