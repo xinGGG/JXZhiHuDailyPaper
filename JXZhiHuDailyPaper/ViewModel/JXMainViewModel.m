@@ -29,8 +29,6 @@
     
     //开始数据绑定
     @weakify(self);
-    //update数据绑定 UI reload
-    self.updatedContentSignal = [[RACSubject subject] setNameWithFormat:@"JXMainViewModel updatedContentSignal"];
 
     //控制器外部控制内部方法
     self.getDataCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
@@ -45,6 +43,9 @@
     [[self.dataArray rac_signalForSelector:@selector(removeAllObjects)] subscribeNext:^(id x) {
         [(RACSubject *)self.updatedContentSignal sendNext:nil];
     }];
+    //update数据绑定 UI reload
+    self.updatedContentSignal = [[RACSubject subject] setNameWithFormat:@"JXMainViewModel updatedContentSignal"];
+
 
     //报错提示
     self.connectionErrors = self.getDataCommand.errors;

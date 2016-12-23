@@ -13,21 +13,6 @@
 ///------------
 
 #define JXNowNavigation                  [[UIApplication sharedApplication] activityViewController].navigationController
-///------------
-/// Client Info
-///------------
-
-#define JX_CLIENT_ID     @"ef5834ea86b53233dc41"
-#define JX_CLIENT_SECRET @"6eea860464609635567d001b1744a052f8568a99"
-
-///-----------
-/// SSKeychain
-///-----------
-
-#define JX_SERVICE_NAME @"com.leichunfeng.MVVMReactiveCocoa"
-#define JX_RAW_LOGIN    @"RawLogin"
-#define JX_PASSWORD     @"Password"
-#define JX_ACCESS_TOKEN @"AccessToken"
 
 ///-----------
 /// URL Scheme
