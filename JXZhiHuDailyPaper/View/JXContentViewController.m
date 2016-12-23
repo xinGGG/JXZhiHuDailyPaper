@@ -7,16 +7,81 @@
 //
 
 #import "JXContentViewController.h"
-
-@interface JXContentViewController ()
-
+#import "JXContentViewModel.h"
+@interface JXContentViewController ()<UIWebViewDelegate>
+@property (nonatomic, assign) BOOL         didSetupConstrains;
+@property (nonatomic, strong) UIWebView         *webView;
 @end
 
 @implementation JXContentViewController
 
+
+- (void)loadView {
+    self.view = [UIView new];
+    self.webView = [UIWebView newAutoLayoutView];
+    self.webView.delegate = self;
+    self.webView.opaque = NO;
+    self.webView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.webView];
+    //    self.view.backgroundColor = RGBA(238, 239, 243, 1);
+  
+    //约束
+    [self.view setNeedsUpdateConstraints];
+}
+
+
+- (void)updateViewConstraints {
+    if (!self.didSetupConstrains) {
+#pragma mark - 布局
+        [self.webView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.view];
+        [self.webView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view];
+        [self.webView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.view];
+        [self.webView autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.view];
+
+        self.didSetupConstrains   = YES;
+    }
+    
+    [super updateViewConstraints];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.    
+    @weakify(self);
+    [self.viewModel.loadCammand execute:self.viewModel.ID];
+    [self.viewModel.loadCammand.executing subscribeNext:^(id x) {
+        @strongify(self);
+        BOOL isLoading = [x boolValue];
+        if (isLoading) {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }else{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }
+    }];
+
+    //错误操作
+    [self.viewModel.connectionErrors subscribeNext:^(id x) {
+        @strongify(self);
+//        JXError([(NSError *)x domain]);
+        JXError(@"Error");
+        
+    }];
+    
+    //htmlString 改变就重刷
+    [[RACObserve(self.viewModel,HTMLString) filter:^BOOL(id value) {
+        if (self.viewModel.HTMLString.length==0 ) {
+            return NO;
+        };
+        return YES;
+    }] subscribeNext:^(id x) {
+        JXSuccess(@"更新成功");
+        [self reloadHtml];
+    }];
+}
+
+- (void)reloadHtml{
+    [self.webView loadHTMLString:self.viewModel.HTMLString baseURL:nil];
+//    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:self.viewModel.HTMLString]]];
 }
 
 - (void)didReceiveMemoryWarning {

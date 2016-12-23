@@ -7,7 +7,8 @@
 //
 
 #import "JXBaseViewController.h"
-
+@class JXContentViewModel;
 @interface JXContentViewController : JXBaseViewController
+@property (nonatomic,strong)JXContentViewModel *viewModel;
 
 @end

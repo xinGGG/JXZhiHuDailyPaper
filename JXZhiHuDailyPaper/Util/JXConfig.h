@@ -26,5 +26,4 @@
 
 #define JX_DOCUMENT_DIRECTORY NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject
 
-
 #endif /* JXConfig_h */

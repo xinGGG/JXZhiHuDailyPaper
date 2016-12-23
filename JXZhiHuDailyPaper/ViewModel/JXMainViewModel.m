@@ -8,6 +8,8 @@
 
 #import "JXMainViewModel.h"
 #import "JXStorieModel.h"
+#import "JXContentViewModel.h"
+#import "JXContentViewController.h"
 @interface JXMainViewModel()
 @property (nonatomic, strong) RACSubject *updatedContentSignal;
 
@@ -65,7 +67,11 @@
         JXStorieModel *model = [self modelAtIndexPath:indexPath];
         NSLog(@"%@",model);
         //JXNowNavigation 获取当前界面的Navigation;
-        [JXNowNavigation pushViewController:[UIViewController new] animated:YES];
+        JXContentViewController *VC = [[JXContentViewController alloc] init];
+        JXContentViewModel *viewModel = [[JXContentViewModel alloc] init];
+        viewModel.ID = model.ID;
+        VC.viewModel = viewModel;
+        [JXNowNavigation pushViewController:VC animated:YES];
         [subscriber sendCompleted];
         //信号一定要输出结束 不然会卡死 只能触发一次
         return nil;

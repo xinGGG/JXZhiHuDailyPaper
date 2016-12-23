@@ -12,6 +12,7 @@
 //所有测试的url来源
 //https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90
 @property (nonatomic,strong) NSString *url;
+@property (nonatomic,strong) NSString *detailUrl;
 @end
 
 @implementation JXNetWorkTests
@@ -19,7 +20,8 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.url = @"http://news-at.zhihu.com/api/4/news/latest";
-
+    
+    self.detailUrl = @"http://news-at.zhihu.com/api/4/news/3892357";
 }
 
 - (void)tearDown {
@@ -62,6 +64,20 @@
                          }];
     WAIT
 
+}
+
+- (void)testDetailModel{
+    [[JXNetWork defaultUtil] GET:self.detailUrl
+                      parameters:nil
+                         success:^(id responseObject){
+                             //                             NSLog(@"%@",responseObject);
+                             XCTAssertNotNil(responseObject);
+                             NOTIFY
+                         } failure:^(NSError *error){
+                             XCTFail(@"fail");
+                             NOTIFY
+                         }];
+    WAIT
 }
 
 

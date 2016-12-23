@@ -9,6 +9,7 @@
 #import "JXMainViewController.h"
 #import "JXMainViewModel.h"
 #import "JXMainTableViewCell.h"
+#import "JXContentViewController.h"
 @interface JXMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @end
@@ -76,11 +77,12 @@
     }];
     
     ///////test///////
-    //发起网络请求
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    //发起网络请求
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.viewModel.getDataCommand execute:@1];
-    });
+//    });
     ///////test///////
+    
 }
 
 - (void)didReceiveMemoryWarning {
