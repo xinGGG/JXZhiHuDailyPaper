@@ -8,9 +8,13 @@
 
 #import "JXContentViewController.h"
 #import "JXContentViewModel.h"
+#import "CycleScrollView.h"
+
 @interface JXContentViewController ()<UIWebViewDelegate>
-@property (nonatomic, assign) BOOL         didSetupConstrains;
+@property (nonatomic, assign) BOOL              didSetupConstrains;
 @property (nonatomic, strong) UIWebView         *webView;
+@property (nonatomic, strong) TopView           *topView;
+
 @end
 
 @implementation JXContentViewController
@@ -24,6 +28,7 @@
     self.webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.webView];
     //    self.view.backgroundColor = RGBA(238, 239, 243, 1);
+    [self.view addSubview:self.topView];
   
     //约束
     [self.view setNeedsUpdateConstraints];
@@ -46,7 +51,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.    
+    // Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     @weakify(self);
     [self.viewModel.loadCammand execute:self.viewModel.ID];
     [self.viewModel.loadCammand.executing subscribeNext:^(id x) {
@@ -76,6 +82,11 @@
     }] subscribeNext:^(id x) {
         JXSuccess(@"更新成功");
         [self reloadHtml];
+        self.topView.detailStory = self.viewModel.contentModel;
+    }];
+    
+    [RACObserve(self,viewModel) subscribeNext:^(id x) {
+        NSLog(@"%@",_viewModel);
     }];
 }
 
@@ -98,5 +109,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - layer
+- (TopView *)topView{
+    if (_topView == nil) {
+        _topView = [TopView attchToView:self.view observeScorllView:self.webView];
+    }
+    return _topView;
+}
 
 @end

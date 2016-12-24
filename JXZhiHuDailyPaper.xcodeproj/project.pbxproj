@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2143F3401E0CFEDD00C38909 /* JXHtmlAnalyzingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143F33F1E0CFEDD00C38909 /* JXHtmlAnalyzingTool.m */; };
 		2143F3431E0CFF4300C38909 /* JXContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143F3421E0CFF4300C38909 /* JXContentModel.m */; };
+		2143F34B1E0D6A2600C38909 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143F3491E0D6A2600C38909 /* CycleScrollView.m */; };
+		2143F34C1E0D6A2600C38909 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2143F34A1E0D6A2600C38909 /* TopView.xib */; };
 		2152FF3F1E0936B400FB60C3 /* JXMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */; };
 		2152FF421E093F8B00FB60C3 /* JXBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF411E093F8B00FB60C3 /* JXBaseViewModel.m */; };
 		2152FF4C1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF4B1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m */; };
@@ -65,6 +67,9 @@
 		2143F33F1E0CFEDD00C38909 /* JXHtmlAnalyzingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXHtmlAnalyzingTool.m; sourceTree = "<group>"; };
 		2143F3411E0CFF4300C38909 /* JXContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXContentModel.h; sourceTree = "<group>"; };
 		2143F3421E0CFF4300C38909 /* JXContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXContentModel.m; sourceTree = "<group>"; };
+		2143F3481E0D6A2600C38909 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
+		2143F3491E0D6A2600C38909 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
+		2143F34A1E0D6A2600C38909 /* TopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
 		2152FF3D1E0936B400FB60C3 /* JXMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMainTableViewCell.h; sourceTree = "<group>"; };
 		2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainTableViewCell.m; sourceTree = "<group>"; };
 		2152FF401E093F8B00FB60C3 /* JXBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBaseViewModel.h; sourceTree = "<group>"; };
@@ -167,6 +172,68 @@
 				73FEC77FD960D7A1C4C262C3 /* Pods-JXZhiHuDailyPaperTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		2143F34D1E0D6A2D00C38909 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				2152FF4D1E0BB91F00FB60C3 /* JXContentViewController.h */,
+				2152FF4E1E0BB91F00FB60C3 /* JXContentViewController.m */,
+				2143F3481E0D6A2600C38909 /* CycleScrollView.h */,
+				2143F3491E0D6A2600C38909 /* CycleScrollView.m */,
+				2143F34A1E0D6A2600C38909 /* TopView.xib */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
+		2143F34E1E0D6A3D00C38909 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				21E523931E06A96C00B67CCF /* JXMainViewController.h */,
+				21E523941E06A96C00B67CCF /* JXMainViewController.m */,
+				2152FF3D1E0936B400FB60C3 /* JXMainTableViewCell.h */,
+				2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		2143F34F1E0D6A4500C38909 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				21E5232A1E02630A00B67CCF /* JXViewModelNavigationProtocol.h */,
+				21E5232D1E02635200B67CCF /* JXViewModelNavigationImpl.h */,
+				21E5232E1E02635200B67CCF /* JXViewModelNavigationImpl.m */,
+				2152FF401E093F8B00FB60C3 /* JXBaseViewModel.h */,
+				2152FF411E093F8B00FB60C3 /* JXBaseViewModel.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		2143F3501E0D6A4A00C38909 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				21E523961E06B05C00B67CCF /* JXMainViewModel.h */,
+				21E523971E06B05C00B67CCF /* JXMainViewModel.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		2143F3511E0D6A4D00C38909 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				2152FF501E0BB94300FB60C3 /* JXContentViewModel.h */,
+				2152FF511E0BB94300FB60C3 /* JXContentViewModel.m */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
+		2143F3521E0D6A5500C38909 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				21E523901E06A65D00B67CCF /* JXBaseViewController.h */,
+				21E523911E06A65D00B67CCF /* JXBaseViewController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		21CEC09A1E0177DE0032B7AF = {
@@ -274,14 +341,9 @@
 		21E523211E01897100B67CCF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2152FF4D1E0BB91F00FB60C3 /* JXContentViewController.h */,
-				2152FF4E1E0BB91F00FB60C3 /* JXContentViewController.m */,
-				21E523931E06A96C00B67CCF /* JXMainViewController.h */,
-				21E523941E06A96C00B67CCF /* JXMainViewController.m */,
-				2152FF3D1E0936B400FB60C3 /* JXMainTableViewCell.h */,
-				2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */,
-				21E523901E06A65D00B67CCF /* JXBaseViewController.h */,
-				21E523911E06A65D00B67CCF /* JXBaseViewController.m */,
+				2143F3521E0D6A5500C38909 /* Base */,
+				2143F34D1E0D6A2D00C38909 /* Content */,
+				2143F34E1E0D6A3D00C38909 /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,15 +351,9 @@
 		21E523221E01897100B67CCF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				21E5232A1E02630A00B67CCF /* JXViewModelNavigationProtocol.h */,
-				21E5232D1E02635200B67CCF /* JXViewModelNavigationImpl.h */,
-				21E5232E1E02635200B67CCF /* JXViewModelNavigationImpl.m */,
-				2152FF401E093F8B00FB60C3 /* JXBaseViewModel.h */,
-				2152FF411E093F8B00FB60C3 /* JXBaseViewModel.m */,
-				21E523961E06B05C00B67CCF /* JXMainViewModel.h */,
-				21E523971E06B05C00B67CCF /* JXMainViewModel.m */,
-				2152FF501E0BB94300FB60C3 /* JXContentViewModel.h */,
-				2152FF511E0BB94300FB60C3 /* JXContentViewModel.m */,
+				2143F34F1E0D6A4500C38909 /* Base */,
+				2143F3501E0D6A4A00C38909 /* Main */,
+				2143F3511E0D6A4D00C38909 /* Content */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -445,6 +501,7 @@
 			files = (
 				21CEC0B61E0177DE0032B7AF /* LaunchScreen.storyboard in Resources */,
 				21E5237A1E0668F000B67CCF /* icon-error@2x.png in Resources */,
+				2143F34C1E0D6A2600C38909 /* TopView.xib in Resources */,
 				21E5237C1E0668F000B67CCF /* icon-info@2x.png in Resources */,
 				21E5237B1E0668F000B67CCF /* icon-info.png in Resources */,
 				21E523801E0668F000B67CCF /* LICENSE in Resources */,
@@ -573,6 +630,7 @@
 				21E5234E1E0518FD00B67CCF /* NSString+md5.m in Sources */,
 				21E523251E018AF200B67CCF /* FMDatabaseQueue+Extension.m in Sources */,
 				21E523951E06A96C00B67CCF /* JXMainViewController.m in Sources */,
+				2143F34B1E0D6A2600C38909 /* CycleScrollView.m in Sources */,
 				2152FF421E093F8B00FB60C3 /* JXBaseViewModel.m in Sources */,
 				21E5232F1E02635200B67CCF /* JXViewModelNavigationImpl.m in Sources */,
 				21E523891E06913400B67CCF /* NavigationViewController.m in Sources */,
