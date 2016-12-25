@@ -331,6 +331,8 @@ static CGFloat const animationDuration = 5.0;
     
     CycleView *cycleView = [[CycleView alloc] initWithFrame:CGRectMake(0, -45, SCREEN_WIDTH, 265)];
     cycleView.myScrollView = scrollView;
+    
+    
     [scrollView addObserver:cycleView
                  forKeyPath:@"contentOffset"
                     options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld

@@ -28,7 +28,7 @@
 
     //ViewModel 首要原则不处理view上的功能
     self.dataArray = [NSMutableArray array];
-    
+    self.lastestDate = @"";
     //开始数据绑定
     @weakify(self);
 
@@ -58,7 +58,8 @@
         return [self clickCellSignal:indexPath];
     }];
     
-
+//    @property (nonatomic,strong) NSString           *lastestDate;
+    
 };
 
 //点击cell 内部实现跳转逻辑
@@ -84,7 +85,8 @@
     //内部实现信号并返回
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         //开始网络请求 结束再处理
-        [self getDataWithSuccess:^(id responseObject) {
+        [self getDataByLastestDate:self.lastestDate
+         WithSuccess:^(id responseObject) {
 //            [subscriber sendError:ErrorTitle(@"请求失败")];
             [subscriber sendNext:nil];        //向外传递信号
             [subscriber sendCompleted];        //传递结束
@@ -96,8 +98,19 @@
     }];
 }
 
-- (void)getDataWithSuccess:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
-    [[JXNetWork defaultUtil] GET:@"http://news-at.zhihu.com/api/4/news/latest"
+- (void)getDataByLastestDate:(NSString *)lastestDate WithSuccess:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
+    NSString *getUrl = @"http://news-at.zhihu.com/api/4/news/";
+    
+    NSString *typeUrl = @"";
+    if (self.lastestDate==nil && self.lastestDate.length==0) {
+        typeUrl= @"latest";
+    }else{
+        typeUrl = [NSString stringWithFormat:@"before/%@",self.lastestDate];
+    }
+    
+    getUrl = [NSString stringWithFormat:@"%@%@",getUrl,typeUrl];
+//
+    [[JXNetWork defaultUtil] GET:getUrl
                       parameters:nil
                            cache:NO ignoreParameters:nil success:^(id responseObject) {
                                [self.dataArray removeAllObjects];
@@ -114,6 +127,7 @@
                                }
                                [info setObject:arrM forKey:@"stories"];
                                [info setObject:date forKey:@"date"];
+                               self.lastestDate = date;
                                [self.dataArray addObject:info];
                                //////////////////数据处理//////////////////
 

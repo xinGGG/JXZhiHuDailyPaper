@@ -33,5 +33,6 @@
 #import "RVMViewModel.h"
 #import "UIImageView+WebCache.h"
 #import "UIApplication+ActivityViewController.h"
+#import "MJRefresh.h"
 #endif
 #endif /* JXZhiHuDailyPaper_Prefix_pch */

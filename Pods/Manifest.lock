@@ -19,6 +19,7 @@ PODS:
   - FMDB/standard (2.6.2)
   - IQKeyboardManager (3.3.7)
   - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
   - pop (1.0.9)
   - PureLayout (3.0.2)
   - ReactiveCocoa (2.5):
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - FMDB (= 2.6.2)
   - IQKeyboardManager
   - MBProgressHUD
+  - MJRefresh
   - pop
   - PureLayout
   - ReactiveCocoa (~> 2.4)
@@ -52,6 +54,7 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
@@ -59,6 +62,6 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: aa587e1be111b5f4b1a95459f4296735271b1a45
+PODFILE CHECKSUM: d93e46e43a3b8395306316e1c3e735e0470ab455
 
 COCOAPODS: 1.1.1

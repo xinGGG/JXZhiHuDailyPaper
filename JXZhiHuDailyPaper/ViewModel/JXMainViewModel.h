@@ -18,7 +18,7 @@
 
 //结果
 @property (nonatomic,strong) NSMutableArray     *dataArray;
-
+@property (nonatomic,strong) NSString           *lastestDate;
 -(NSInteger)numberOfSections;
 -(NSInteger)numberOfItemsInSection:(NSInteger)section;
 -(NSString *)titleForSection:(NSInteger)section;

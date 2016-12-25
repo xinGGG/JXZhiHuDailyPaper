@@ -82,12 +82,16 @@
     }] subscribeNext:^(id x) {
         JXSuccess(@"更新成功");
         [self reloadHtml];
-        self.topView.detailStory = self.viewModel.contentModel;
     }];
     
+    //双向绑定
+    RAC(self.topView,detailStory) = RACObserve(self.viewModel, contentModel);
+    
+    //viewModel 任意改变即触发
     [RACObserve(self,viewModel) subscribeNext:^(id x) {
         NSLog(@"%@",_viewModel);
     }];
+    
 }
 
 - (void)reloadHtml{
