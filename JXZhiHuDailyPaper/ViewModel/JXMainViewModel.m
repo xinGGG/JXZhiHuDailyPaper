@@ -24,6 +24,7 @@
     return self;
 }
 
+#pragma mark 绑定数据
 - (void)bind{
 
     //ViewModel 首要原则不处理view上的功能
@@ -32,7 +33,7 @@
     //开始数据绑定
     @weakify(self);
 
-    //控制器外部控制内部方法
+    //控制器外部控制内部方法 
     self.getDataCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self);
         return [self getDataSignal:[input boolValue]];
@@ -48,7 +49,6 @@
     //update数据绑定 UI reload
     self.updatedContentSignal = [[RACSubject subject] setNameWithFormat:@"JXMainViewModel updatedContentSignal"];
 
-
     //报错提示
     self.connectionErrors = self.getDataCommand.errors;
 
@@ -62,7 +62,7 @@
     
 };
 
-//点击cell 内部实现跳转逻辑
+#pragma mark 点击cell 内部实现跳转逻辑
 - (RACSignal *)clickCellSignal:(NSIndexPath *)indexPath{
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         JXStorieModel *model = [self modelAtIndexPath:indexPath];
@@ -79,7 +79,7 @@
     }];
 }
 
-//获取数据
+#pragma mark 获取数据
 - (RACSignal *)getDataSignal:(BOOL)isLastest
 {
     //内部实现信号并返回
@@ -98,6 +98,7 @@
     }];
 }
 
+#pragma mark 网络请求方法
 - (void)getDataByLastestDate:(BOOL)isLastest WithSuccess:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
     NSString *getUrl = @"http://news-at.zhihu.com/api/4/news/";
     
@@ -139,10 +140,6 @@
                            }];
 }
 
-- (void)reloadData{
-    [(RACSubject *)self.updatedContentSignal sendNext:nil];
-}
-
 #pragma mark - 单条数据模型处理
 - (JXStorieModel *)modelAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *Section = self.dataArray[indexPath.section];
@@ -168,7 +165,8 @@
     return dateTitle;
 }
 
-
-
+- (void)reloadData{
+    [(RACSubject *)self.updatedContentSignal sendNext:nil];
+}
 
 @end
