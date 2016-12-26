@@ -65,12 +65,11 @@
         BOOL isLoading = [x boolValue];
         if (isLoading) {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [self.tableView.mj_header beginRefreshing];
 
         }else{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.tableView.mj_header endRefreshing];
-
+            [self.tableView.mj_footer endRefreshing];
         }
     }];
     
@@ -89,12 +88,14 @@
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        [self.viewModel.getDataCommand execute:nil];
+        [self.tableView.mj_header beginRefreshing];
+        [self.viewModel.getDataCommand execute:@YES];
     }];
     
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         //Call this Block When enter the refresh status automatically
-        [self.viewModel.getDataCommand execute:@1];
+        [self.tableView.mj_footer beginRefreshing];
+        [self.viewModel.getDataCommand execute:@NO];
     }];
     
     

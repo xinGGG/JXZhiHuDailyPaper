@@ -35,7 +35,7 @@
     //控制器外部控制内部方法
     self.getDataCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self);
-        return [self getDataSignal];
+        return [self getDataSignal:[input boolValue]];
     }];
     
     //监听Array数据修改操作 刷新tablview 触发外部Command
@@ -80,12 +80,12 @@
 }
 
 //获取数据
-- (RACSignal *)getDataSignal
+- (RACSignal *)getDataSignal:(BOOL)isLastest
 {
     //内部实现信号并返回
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         //开始网络请求 结束再处理
-        [self getDataByLastestDate:self.lastestDate
+        [self getDataByLastestDate:isLastest
          WithSuccess:^(id responseObject) {
 //            [subscriber sendError:ErrorTitle(@"请求失败")];
             [subscriber sendNext:nil];        //向外传递信号
@@ -98,12 +98,14 @@
     }];
 }
 
-- (void)getDataByLastestDate:(NSString *)lastestDate WithSuccess:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
+- (void)getDataByLastestDate:(BOOL)isLastest WithSuccess:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure{
     NSString *getUrl = @"http://news-at.zhihu.com/api/4/news/";
     
     NSString *typeUrl = @"";
-    if (self.lastestDate==nil && self.lastestDate.length==0) {
+    if (isLastest) {
         typeUrl= @"latest";
+        [self.dataArray removeAllObjects];
+
     }else{
         typeUrl = [NSString stringWithFormat:@"before/%@",self.lastestDate];
     }
@@ -113,7 +115,6 @@
     [[JXNetWork defaultUtil] GET:getUrl
                       parameters:nil
                            cache:NO ignoreParameters:nil success:^(id responseObject) {
-                               [self.dataArray removeAllObjects];
                                NSMutableDictionary *info = [NSMutableDictionary dictionary];
                                
                                //////////////////数据处理//////////////////
