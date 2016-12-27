@@ -16,6 +16,7 @@
 
 @implementation JXMainTableViewCell
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -33,10 +34,22 @@
     if (self) {
         [self addView];
         [self layout];
+        [self bind];
         
     }
     return  self;
 }
+
+//监听模型变化
+- (void)bind{
+    [RACObserve(self, storieModel) subscribeNext:^(JXStorieModel *model) {
+        if(model.images.count>0){
+            [self._imgV sd_setImageWithURL:[NSURL URLWithString:[model.images firstObject]] placeholderImage:nil];
+        }
+        self._titleLabel.text = model.title;
+    }];
+}
+
 
 - (void)addView{
     self._imgV = [UIImageView newAutoLayoutView];
@@ -62,13 +75,5 @@
     [self._titleLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.contentView withOffset:-15];
 }
 
--(void)setModel:(JXStorieModel *)model{
-    _model = model;
-    if(model.images.count>0){
-        [self._imgV sd_setImageWithURL:[NSURL URLWithString:[model.images firstObject]] placeholderImage:nil];
-    }
-    self._titleLabel.text = model.title;
-    
-}
 
 @end

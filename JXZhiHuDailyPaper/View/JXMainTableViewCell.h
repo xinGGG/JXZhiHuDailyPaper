@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 @class JXStorieModel;
 @interface JXMainTableViewCell : UITableViewCell
-@property(nonatomic,strong)JXStorieModel *model;
+@property(nonatomic,strong)JXStorieModel *storieModel;
 @end

@@ -41,7 +41,7 @@
         //开始网络请求 结束再处理
         [self getDataWithID:ID Success:^(id responseObject) {
             //            [subscriber sendError:ErrorTitle(@"请求失败")];
-            [subscriber sendNext:nil];        //向外传递信号
+            [subscriber sendNext:responseObject];        //向外传递信号
             [subscriber sendCompleted];        //传递结束
         } failure:^(NSError *error) {
             [subscriber sendError:nil];

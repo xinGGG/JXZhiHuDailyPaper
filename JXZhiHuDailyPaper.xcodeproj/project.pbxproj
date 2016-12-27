@@ -11,6 +11,7 @@
 		2143F3431E0CFF4300C38909 /* JXContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143F3421E0CFF4300C38909 /* JXContentModel.m */; };
 		2143F34B1E0D6A2600C38909 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143F3491E0D6A2600C38909 /* CycleScrollView.m */; };
 		2143F34C1E0D6A2600C38909 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2143F34A1E0D6A2600C38909 /* TopView.xib */; };
+		2143F3581E1255F000C38909 /* JXZhiHuDailyPaperContentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2143F3571E1255F000C38909 /* JXZhiHuDailyPaperContentTests.m */; };
 		2152FF3F1E0936B400FB60C3 /* JXMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */; };
 		2152FF421E093F8B00FB60C3 /* JXBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF411E093F8B00FB60C3 /* JXBaseViewModel.m */; };
 		2152FF4C1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152FF4B1E0BA77D00FB60C3 /* UIApplication+ActivityViewController.m */; };
@@ -70,6 +71,7 @@
 		2143F3481E0D6A2600C38909 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		2143F3491E0D6A2600C38909 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		2143F34A1E0D6A2600C38909 /* TopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
+		2143F3571E1255F000C38909 /* JXZhiHuDailyPaperContentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXZhiHuDailyPaperContentTests.m; sourceTree = "<group>"; };
 		2152FF3D1E0936B400FB60C3 /* JXMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMainTableViewCell.h; sourceTree = "<group>"; };
 		2152FF3E1E0936B400FB60C3 /* JXMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainTableViewCell.m; sourceTree = "<group>"; };
 		2152FF401E093F8B00FB60C3 /* JXBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBaseViewModel.h; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				21E523821E066E5800B67CCF /* AFTestCase.h */,
 				21E523831E066E5800B67CCF /* AFTestCase.m */,
 				21CEC0C01E0177DF0032B7AF /* JXZhiHuDailyPaperTests.m */,
+				2143F3571E1255F000C38909 /* JXZhiHuDailyPaperContentTests.m */,
 				21E523851E066E9200B67CCF /* JXNetWorkTests.m */,
 				21CEC0C21E0177DF0032B7AF /* Info.plist */,
 			);
@@ -654,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21E523841E066E5800B67CCF /* AFTestCase.m in Sources */,
+				2143F3581E1255F000C38909 /* JXZhiHuDailyPaperContentTests.m in Sources */,
 				21CEC0C11E0177DF0032B7AF /* JXZhiHuDailyPaperTests.m in Sources */,
 				21E523861E066E9200B67CCF /* JXNetWorkTests.m in Sources */,
 			);

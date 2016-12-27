@@ -11,8 +11,7 @@
 @interface JXContentViewModel : JXBaseViewModel
 
 //singal
-@property (nonatomic,strong) RACCommand *loadCammand;
-@property (nonatomic,strong) RACCommand *loadingCammand;
+@property (nonatomic,strong)  RACCommand *loadCammand;
 @property (nonatomic, strong) RACSignal    *connectionErrors;
 
 //属性

@@ -57,9 +57,7 @@
         @strongify(self);
         return [self clickCellSignal:indexPath];
     }];
-    
-//    @property (nonatomic,strong) NSString           *lastestDate;
-    
+
 };
 
 #pragma mark 点击cell 内部实现跳转逻辑
@@ -80,14 +78,14 @@
 }
 
 #pragma mark 获取数据
-- (RACSignal *)getDataSignal:(BOOL)isLastest
-{
+- (RACSignal *)getDataSignal:(BOOL)isLastest{
+    
     //内部实现信号并返回
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         //开始网络请求 结束再处理
         [self getDataByLastestDate:isLastest
          WithSuccess:^(id responseObject) {
-//            [subscriber sendError:ErrorTitle(@"请求失败")];
+            //[subscriber sendError:ErrorTitle(@"请求失败")];
             [subscriber sendNext:responseObject];        //向外传递信号
             [subscriber sendCompleted];        //传递结束
         } failure:^(NSError *error) {

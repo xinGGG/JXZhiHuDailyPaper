@@ -92,8 +92,6 @@
         [self.viewModel.getDataCommand execute:@NO];
     }];
     
-    
-    
     // Enter the refresh status immediately
     [self.tableView.mj_header beginRefreshing];
     
@@ -113,8 +111,7 @@
     return [self.viewModel numberOfItemsInSection:section];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     JXMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if(cell==nil){
         cell = [[JXMainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
@@ -127,7 +124,6 @@
     return [self.viewModel titleForSection:section];
 }
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.viewModel.clickCellCommand execute:indexPath];
 }
@@ -139,7 +135,7 @@
 - (void)configureCell:(JXMainTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
     //    cell.textLabel.text = @"title";
     //    cell.detailTextLabel.text = @"content";
-    cell.model = [self.viewModel modelAtIndexPath:indexPath];
+    cell.storieModel = [self.viewModel modelAtIndexPath:indexPath];
 }
 
 

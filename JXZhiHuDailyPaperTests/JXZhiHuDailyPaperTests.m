@@ -21,7 +21,6 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.viewModel = [[JXMainViewModel alloc] init];
     
-    
     NSDate *currentDate = [NSDate date];//获取当前时间，日期
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYYMMdd"];
@@ -34,6 +33,7 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
     self.viewModel = nil;
+    self.todayString = nil;
 }
 
 #pragma mark 测试获取当天数据
