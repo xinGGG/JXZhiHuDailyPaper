@@ -10,8 +10,12 @@
 #import "JXMainViewModel.h"
 #import "JXMainTableViewCell.h"
 #import "JXContentViewController.h"
-@interface JXMainViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface JXMainViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
+
+@property (nonatomic, strong) UIView *naviBar;
+@property (nonatomic, strong) UILabel *titleLabel;
+
 @end
 
 @implementation JXMainViewController
@@ -23,6 +27,12 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+    
+    
+    
+    [self.view addSubview:self.naviBar];
+//    [self.view addSubview:self.titleLabel];
+
     //约束
     [self.view setNeedsUpdateConstraints];
 }
@@ -34,6 +44,13 @@
         [self.tableView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view];
         [self.tableView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.view];
         [self.tableView autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.view];
+        
+        [self.naviBar autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.view];
+        [self.naviBar autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view];
+        [self.naviBar autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.view];
+        [self.naviBar autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.view];
+        [self.naviBar autoSetDimension:ALDimensionHeight toSize:55];
+
         self.didSetupConstraints   = YES;
     }
     
@@ -95,6 +112,8 @@
     // Enter the refresh status immediately
     [self.tableView.mj_header beginRefreshing];
     
+    
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,10 +139,6 @@
     return cell;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [self.viewModel titleForSection:section];
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.viewModel.clickCellCommand execute:indexPath];
 }
@@ -132,10 +147,40 @@
     return 100;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [self.viewModel titleForSection:section];
+}
+
 - (void)configureCell:(JXMainTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
     //    cell.textLabel.text = @"title";
     //    cell.detailTextLabel.text = @"content";
     cell.storieModel = [self.viewModel modelAtIndexPath:indexPath];
+}
+
+#pragma mark - layer
+- (UIView *)naviBar{
+    if (_naviBar == nil) {
+        _naviBar = [UIView newAutoLayoutView];
+        _naviBar.backgroundColor = RGBAlpha(23, 144, 211, 1);
+        _naviBar.alpha = 0;
+    }
+    return _naviBar;
+}
+
+- (UILabel *)titleLabel{
+    if (_titleLabel == nil) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.attributedText = [[NSAttributedString alloc]
+                                      initWithString:@"今日热闻"
+                                      attributes:@{NSFontAttributeName:
+                                                       [UIFont
+                                                        systemFontOfSize:18],NSForegroundColorAttributeName:
+                                                       [UIColor whiteColor]}];
+        [_titleLabel sizeToFit];
+        _titleLabel.centerX = self.view.centerX;
+        _titleLabel.centerY = 35;
+    }
+    return _titleLabel;
 }
 
 

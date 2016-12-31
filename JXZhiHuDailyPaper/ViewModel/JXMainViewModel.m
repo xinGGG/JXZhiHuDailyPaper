@@ -118,7 +118,7 @@
                                
                                //////////////////数据处理//////////////////
                                NSArray *stories = [responseObject objectForKeyWithoutNull:@"stories"];
-                               NSArray *date = [responseObject objectForKeyWithoutNull:@"date"];
+                               NSString *date = [responseObject objectForKeyWithoutNull:@"date"];
                                NSMutableArray *arrM = [NSMutableArray array];
                                for (int i = 0; i<stories.count; i++) {
                                    NSDictionary *dict = stories[i];

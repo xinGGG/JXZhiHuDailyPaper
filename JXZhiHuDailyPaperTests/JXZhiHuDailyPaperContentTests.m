@@ -19,7 +19,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     self.viewModel = [[JXContentViewModel alloc] init];
-    self.viewModel.ID = @"9097926";
+    self.viewModel.ID = @"9106826";
 }
 
 - (void)tearDown{
@@ -33,12 +33,11 @@
     __block BOOL successful = NO;
     __block NSError *error = nil;
     
-    RACSignal *result = [self.viewModel.loadCammand execute:@YES];
+    RACSignal *result = [self.viewModel.loadCammand execute:self.viewModel.ID];
     //异步返回
     //接受Command返回的信号 用RACTuple接收信号内容 一般不用再VC 为了保持非耦合 数据只在ViewModel里面处理 不返回VC
     RACTuple *tuple = [result asynchronousFirstOrDefault:nil success:&successful error:&error];
     XCTAssertNotNil(tuple);
-    
     XCTAssertNotNil(self.viewModel.HTMLString);
 }
 

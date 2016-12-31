@@ -53,6 +53,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
     @weakify(self);
     [self.viewModel.loadCammand execute:self.viewModel.ID];
     [self.viewModel.loadCammand.executing subscribeNext:^(id x) {

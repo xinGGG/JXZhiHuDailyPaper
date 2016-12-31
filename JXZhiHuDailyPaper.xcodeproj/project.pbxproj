@@ -291,9 +291,9 @@
 			children = (
 				21E523821E066E5800B67CCF /* AFTestCase.h */,
 				21E523831E066E5800B67CCF /* AFTestCase.m */,
+				21E523851E066E9200B67CCF /* JXNetWorkTests.m */,
 				21CEC0C01E0177DF0032B7AF /* JXZhiHuDailyPaperTests.m */,
 				2143F3571E1255F000C38909 /* JXZhiHuDailyPaperContentTests.m */,
-				21E523851E066E9200B67CCF /* JXNetWorkTests.m */,
 				21CEC0C21E0177DF0032B7AF /* Info.plist */,
 			);
 			path = JXZhiHuDailyPaperTests;
@@ -345,8 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				2143F3521E0D6A5500C38909 /* Base */,
-				2143F34D1E0D6A2D00C38909 /* Content */,
 				2143F34E1E0D6A3D00C38909 /* Main */,
+				2143F34D1E0D6A2D00C38909 /* Content */,
 			);
 			path = View;
 			sourceTree = "<group>";

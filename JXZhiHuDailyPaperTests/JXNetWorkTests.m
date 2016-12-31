@@ -56,7 +56,6 @@
                              //测试缓存是否正确
                              id response = [[JXCache AppCache] objectForKey:cacheKey];
                              XCTAssertTrue([response isEqual:responseObject]);
-                             
                              NOTIFY
                          } failure:^(NSError *error){
                              XCTFail(@"fail");
